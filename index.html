@@ -1,0 +1,1900 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tvůrčí soutěže 2026/2027 – SPŠE a VOŠ Pardubice</title>
+<meta name="description" content="Rozcestník grafických, designových, výtvarných a digitálních soutěží pro žáky SPŠE a VOŠ Pardubice ve školním roce 2026/2027.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════════════════════════════════
+   BAREVNÉ A TYPOGRAFICKÉ PROMĚNNÉ
+   Chcete-li stránku doladit přesně na barvy školního webu, měňte pouze
+   hodnoty níže. Nic jiného v CSS upravovat nemusíte.
+   ══════════════════════════════════════════════════════════════════════ */
+:root{
+  --ink:#0E2233;          /* hlavní tmavá – záhlaví, patička */
+  --ink-2:#17364F;
+  --ink-soft:#4A5F70;     /* sekundární text */
+  --paper:#F3F6F8;        /* pozadí stránky */
+  --card:#FFFFFF;
+  --line:#D9E0E6;         /* linky a rámečky */
+  --blue:#1B5E8E;         /* školní modrá – odkazy, aktivní prvky */
+  --blue-dark:#12456A;
+  --blue-wash:#E8F0F6;
+  --amber:#C9821B;        /* termíny, upozornění */
+  --green:#2E7D6B;        /* otevřeno */
+  --red:#B4462F;          /* končí brzy */
+  --grey:#7E8C98;         /* archiv, neaktivní */
+
+  /* barvy kategorií – používají se jako svislý proužek u položky */
+  --k-vytvarna:#8A4FBF;
+  --k-grafika:#1B5E8E;
+  --k-obal:#0E7C7B;
+  --k-foto:#4C8A2B;
+  --k-film:#B4462F;
+  --k-komiks:#C2871B;
+  --k-digital:#3B4A9E;
+  --k-projekt:#5B6B7A;
+
+  --radius:6px;
+  --shadow:0 1px 2px rgba(14,34,51,.06), 0 8px 24px -16px rgba(14,34,51,.35);
+  --wrap:1180px;
+  --sans:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  --display:"Archivo","IBM Plex Sans",-apple-system,sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-size:16px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:var(--display);font-weight:700;line-height:1.15;margin:0;letter-spacing:-.015em}
+a{color:var(--blue);text-decoration-thickness:1px;text-underline-offset:2px}
+a:hover{color:var(--blue-dark)}
+:focus-visible{outline:3px solid var(--amber);outline-offset:2px;border-radius:3px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ── ZÁHLAVÍ ───────────────────────────────────────────────────────── */
+.topbar{background:var(--ink);color:#fff;font-size:.82rem}
+.topbar .wrap{display:flex;gap:18px;align-items:center;min-height:38px;flex-wrap:wrap}
+.topbar a{color:#B9CBD9;text-decoration:none}
+.topbar a:hover{color:#fff;text-decoration:underline}
+.topbar .sep{margin-left:auto;}
+
+.masthead{background:var(--ink-2);color:#fff;position:relative;overflow:hidden}
+.masthead::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(14,34,51,0) 55%,rgba(14,34,51,.55) 100%)}
+.mast-inner{position:relative;z-index:2;padding:40px 0 30px}
+.eyebrow{font-family:var(--display);font-weight:600;font-size:.82rem;color:#8FB6D2;margin:0 0 10px}
+.masthead h1{font-size:clamp(1.9rem,4.4vw,3.15rem);font-weight:800;max-width:19ch;color:#fff}
+.mast-lead{max-width:62ch;color:#C3D6E4;margin:14px 0 0;font-size:1.03rem}
+.mast-meta{margin-top:18px;font-size:.86rem;color:#89A8BF}
+
+/* ambientní kresba v záhlaví */
+.ambient{position:absolute;inset:0;z-index:1;opacity:.5}
+.ambient path{fill:none;stroke:#4C87B4;stroke-width:1;opacity:.45}
+.ambient .drift{animation:drift 46s linear infinite}
+.ambient .drift-2{animation:drift 68s linear infinite reverse}
+.ambient circle{fill:#7FB2D6;opacity:.35}
+.ambient .pulse{animation:pulse 9s ease-in-out infinite}
+@keyframes drift{from{transform:translateX(0)}to{transform:translateX(-240px)}}
+@keyframes pulse{0%,100%{opacity:.15}50%{opacity:.55}}
+
+/* ── ČASOVÁ OSA ────────────────────────────────────────────────────── */
+.timeline{position:relative;z-index:2;background:rgba(9,25,38,.55);border-top:1px solid rgba(143,182,210,.25)}
+.tl-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:16px 0 4px;flex-wrap:wrap}
+.tl-head h2{font-size:1rem;color:#DCE9F2;font-weight:600}
+.tl-hint{font-size:.8rem;color:#89A8BF}
+.tl-scroll{overflow-x:auto;padding-bottom:14px;scrollbar-width:thin}
+.tl-grid{display:grid;grid-template-columns:repeat(11,minmax(76px,1fr));min-width:860px;align-items:end}
+.tl-month{border-left:1px solid rgba(143,182,210,.18);padding:0 6px 0 8px;min-height:122px;
+  display:flex;flex-direction:column;justify-content:flex-end;gap:8px;position:relative;background:none;border-top:0;border-right:0;border-bottom:0;cursor:pointer}
+.tl-month:last-child{border-right:1px solid rgba(143,182,210,.18)}
+.tl-month:hover,.tl-month.on{background:rgba(143,182,210,.10)}
+.tl-dots{display:flex;flex-wrap:wrap;gap:4px}
+.tl-dot{width:11px;height:11px;border-radius:50%;border:0;padding:0;cursor:pointer;
+  background:var(--c);transition:transform .15s ease}
+.tl-dot:hover{transform:scale(1.5)}
+.tl-dot.past{opacity:.32}
+.tl-label{font-family:var(--display);font-size:.74rem;color:#9FBED5;padding-bottom:10px;font-weight:600;text-align:left}
+.tl-label b{display:block;color:#E4EFF6;font-size:1.05rem;font-weight:700;letter-spacing:-.02em}
+.tl-month.now .tl-label b{color:var(--amber)}
+.tl-month.now::before{content:"";position:absolute;left:-1px;top:8px;bottom:0;width:2px;background:var(--amber)}
+.tl-now-tag{position:absolute;top:-2px;left:4px;font-size:.66rem;color:var(--amber);font-family:var(--display);font-weight:600}
+
+/* ── PANEL FILTRŮ ──────────────────────────────────────────────────── */
+.toolbar{position:sticky;top:0;z-index:40;background:rgba(243,246,248,.94);
+  backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid var(--line)}
+.toolbar-inner{padding:14px 0 12px;display:flex;flex-direction:column;gap:12px}
+.tb-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.search{flex:1 1 260px;min-width:0;position:relative}
+.search input{width:100%;padding:10px 14px 10px 38px;border:1px solid var(--line);border-radius:var(--radius);
+  font:inherit;font-size:.94rem;background:var(--card);color:var(--ink)}
+.search svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:16px;height:16px;stroke:var(--ink-soft);fill:none;stroke-width:2}
+select{padding:10px 12px;border:1px solid var(--line);border-radius:var(--radius);background:var(--card);font:inherit;font-size:.9rem;color:var(--ink)}
+.chips{display:flex;gap:7px;flex-wrap:wrap}
+.chip{font:inherit;font-size:.85rem;padding:6px 12px;border-radius:999px;border:1px solid var(--line);
+  background:var(--card);color:var(--ink-soft);cursor:pointer;display:inline-flex;align-items:center;gap:7px;line-height:1.3}
+.chip .swatch{width:9px;height:9px;border-radius:50%;background:var(--c,var(--grey))}
+.chip:hover{border-color:var(--blue);color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.chip[aria-pressed="true"] .swatch{box-shadow:0 0 0 2px rgba(255,255,255,.35)}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--card)}
+.seg button{font:inherit;font-size:.86rem;padding:8px 13px;border:0;background:none;cursor:pointer;color:var(--ink-soft);border-right:1px solid var(--line)}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed="true"]{background:var(--blue);color:#fff}
+.tb-count{font-size:.85rem;color:var(--ink-soft);margin-left:auto}
+.linkbtn{background:none;border:0;font:inherit;font-size:.85rem;color:var(--blue);cursor:pointer;text-decoration:underline;padding:4px}
+
+/* ── SEZNAM SOUTĚŽÍ ────────────────────────────────────────────────── */
+main{padding:28px 0 60px}
+.group-head{display:flex;align-items:baseline;gap:12px;margin:26px 0 12px;padding-bottom:8px;border-bottom:2px solid var(--ink)}
+.group-head h2{font-size:1.28rem}
+.group-head span{font-size:.85rem;color:var(--ink-soft)}
+.list{display:flex;flex-direction:column;gap:10px}
+.item,.group-head{scroll-margin-top:132px}
+section{scroll-margin-top:120px}
+.item{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--c,var(--grey));
+  border-radius:var(--radius);box-shadow:var(--shadow);display:grid;
+  grid-template-columns:1fr auto;gap:10px 22px;padding:16px 18px;align-items:start}
+.item.dim{opacity:.72}
+.item h3{font-size:1.08rem;margin-bottom:3px}
+.item h3 a{color:inherit;text-decoration:none}
+.item h3 a:hover{color:var(--blue);text-decoration:underline}
+.org{font-size:.85rem;color:var(--ink-soft);margin:0 0 7px}
+.desc{font-size:.93rem;margin:0 0 10px;max-width:74ch;color:#25384A}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:.74rem;padding:3px 8px;border-radius:3px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft)}
+.tag.cat{background:var(--c);border-color:var(--c);color:#fff;font-weight:500}
+.tag.free{border-color:#B6D8C8;background:#EAF5F0;color:var(--green)}
+.tag.fee{border-color:#EBD3AC;background:#FBF3E4;color:var(--amber)}
+.side{text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:9px;min-width:172px}
+.deadline{font-family:var(--display);line-height:1.2}
+.deadline .d-label{display:block;font-size:.72rem;color:var(--ink-soft);font-weight:600}
+.deadline .d-date{display:block;font-size:1.22rem;font-weight:700;letter-spacing:-.02em}
+.deadline .d-left{display:block;font-size:.78rem;font-weight:600;margin-top:2px}
+.d-left.soon{color:var(--red)}
+.d-left.ok{color:var(--green)}
+.d-left.past{color:var(--grey)}
+.d-left.tbd{color:var(--amber)}
+.actions{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}
+.btn{font:inherit;font-size:.86rem;padding:7px 13px;border-radius:var(--radius);border:1px solid var(--ink);
+  background:var(--ink);color:#fff;cursor:pointer;text-decoration:none;display:inline-block;white-space:nowrap}
+.btn:hover{background:var(--ink-2);color:#fff}
+.btn.ghost{background:var(--card);color:var(--ink);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-wash)}
+.empty{padding:50px 20px;text-align:center;border:1px dashed var(--line);border-radius:var(--radius);background:var(--card)}
+.empty h3{margin-bottom:8px}
+.empty p{color:var(--ink-soft);margin:0}
+
+/* ── DIALOG S PRAVIDLY ─────────────────────────────────────────────── */
+dialog{border:0;border-radius:10px;padding:0;overflow:hidden;max-width:760px;width:calc(100% - 32px);
+  box-shadow:0 30px 80px -20px rgba(14,34,51,.55);color:var(--ink)}
+dialog::backdrop{background:rgba(9,22,33,.74)}
+.dlg-head{background:var(--ink);color:#fff;padding:22px 26px;border-top:5px solid var(--c,var(--blue));
+  position:sticky;top:0;z-index:2}
+.dlg-head h2{font-size:1.4rem;padding-right:44px;color:#fff}
+.dlg-head p{margin:6px 0 0;color:#AFC8D8;font-size:.88rem}
+.dlg-close{position:absolute;top:16px;right:16px;width:34px;height:34px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.3);background:none;color:#fff;font-size:1.15rem;cursor:pointer;line-height:1}
+.dlg-close:hover{background:rgba(255,255,255,.14)}
+.dlg-body{padding:6px 26px 26px;max-height:min(70vh,640px);overflow-y:auto}
+.dlg-sec{padding:18px 0;border-bottom:1px solid var(--line)}
+.dlg-sec:last-child{border-bottom:0}
+.dlg-sec h3{font-size:.8rem;color:var(--ink-soft);font-weight:600;margin-bottom:8px;font-family:var(--display)}
+.dlg-sec p{margin:0 0 8px}
+.dlg-sec p:last-child{margin-bottom:0}
+.dates{list-style:none;padding:0;margin:0}
+.dates li{display:grid;grid-template-columns:118px 1fr;gap:12px;padding:6px 0;border-bottom:1px dotted var(--line);font-size:.94rem}
+.dates li:last-child{border-bottom:0}
+.dates b{font-family:var(--display);font-weight:700}
+.dates li.key b{color:var(--red)}
+.linklist{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:7px}
+.linklist a{font-size:.94rem}
+.linklist .kind{font-size:.74rem;color:var(--ink-soft);display:block}
+.note{background:var(--blue-wash);border-left:3px solid var(--blue);padding:11px 14px;border-radius:0 var(--radius) var(--radius) 0;font-size:.9rem}
+.note.warn{background:#FBF3E4;border-color:var(--amber)}
+.verify{font-size:.78rem;color:var(--ink-soft);margin-top:14px}
+
+/* ── ÚSPĚCHY ŽÁKŮ ──────────────────────────────────────────────────── */
+.wins{background:var(--ink);color:#fff;padding:52px 0;margin-top:20px}
+.wins h2{font-size:1.6rem;color:#fff;max-width:24ch}
+.wins .lead{color:#B6CCDC;max-width:64ch;margin:12px 0 26px}
+.win-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(266px,1fr));gap:1px;background:rgba(143,182,210,.25);border:1px solid rgba(143,182,210,.25)}
+.win{background:var(--ink);padding:18px 20px;text-decoration:none;color:#fff;display:block}
+.win:hover{background:var(--ink-2);color:#fff}
+.win time{font-size:.76rem;color:#8FB6D2;font-family:var(--display);font-weight:600}
+.win strong{display:block;margin:6px 0 5px;font-family:var(--display);font-size:1rem;line-height:1.3}
+.win span{font-size:.85rem;color:#AFC8D8}
+.wins-more{margin-top:20px;display:inline-block;color:#8FB6D2}
+
+/* ── SPRÁVA OBSAHU ─────────────────────────────────────────────────── */
+.admin{padding:50px 0}
+.admin h2{font-size:1.45rem;margin-bottom:10px}
+.admin p{max-width:72ch;color:#25384A}
+.admin ol{max-width:72ch;padding-left:20px}
+.admin li{margin:8px 0}
+code,pre{font-family:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;font-size:.85rem}
+code{background:#E7EDF2;padding:2px 5px;border-radius:3px}
+pre{background:var(--ink);color:#D7E6F0;padding:18px;border-radius:var(--radius);overflow-x:auto;line-height:1.55}
+
+/* ── PATIČKA ───────────────────────────────────────────────────────── */
+footer{background:var(--ink-2);color:#B6CCDC;padding:40px 0 30px;font-size:.9rem}
+footer h3{font-size:.86rem;color:#fff;margin-bottom:10px;font-family:var(--display)}
+.foot-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:28px}
+footer a{color:#B6CCDC}
+footer a:hover{color:#fff}
+.foot-bottom{margin-top:30px;padding-top:16px;border-top:1px solid rgba(143,182,210,.25);font-size:.8rem;color:#8FA8BC;display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
+
+/* ── RESPONZIVITA ──────────────────────────────────────────────────── */
+@media (max-width:760px){
+  .toolbar{position:static}
+  .chips{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;
+    padding-bottom:4px;margin:0 -20px;padding-left:20px;padding-right:20px;scrollbar-width:none}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{flex:0 0 auto}
+  .item,.group-head{scroll-margin-top:12px}
+  .item{grid-template-columns:1fr}
+  .side{text-align:left;align-items:flex-start;min-width:0;
+    border-top:1px solid var(--line);padding-top:11px;width:100%}
+  .actions{justify-content:flex-start}
+  .deadline{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}
+  .deadline .d-label{font-size:.74rem}
+  .deadline .d-date{font-size:1.05rem}
+  .tb-count{margin-left:0;width:100%}
+  .dates li{grid-template-columns:1fr;gap:0}
+  .mast-inner{padding:30px 0 22px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+@media print{
+  .toolbar,.timeline,.ambient,.actions,.wins,.admin{display:none}
+  body{background:#fff}
+  .item{break-inside:avoid;box-shadow:none}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a href="https://www.spse.cz/">← Zpět na spse.cz</a>
+    <a href="https://www.spse.cz/novinky/clanky/souteze">Články o soutěžích</a>
+    <a href="https://www.spse.cz/novinky/ukazky-praci">Ukázky prací žáků</a>
+    <span class="sep"></span>
+    <a href="mailto:spse@spse.cz">Tip na soutěž? Napište nám</a>
+  </div>
+</div>
+
+<header class="masthead">
+  <svg class="ambient" viewBox="0 0 1400 420" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+    <g class="drift">
+      <path d="M-200 340 C 60 250, 180 380, 420 290 S 800 200, 1080 300 S 1480 250, 1700 190"/>
+      <path d="M-200 368 C 60 278, 180 408, 420 318 S 800 228, 1080 328 S 1480 278, 1700 218"/>
+      <path d="M-200 396 C 60 306, 180 436, 420 346 S 800 256, 1080 356 S 1480 306, 1700 246"/>
+    </g>
+    <g class="drift-2" opacity=".7">
+      <path d="M-200 120 C 120 60, 260 190, 520 120 S 900 40, 1180 130 S 1520 90, 1760 40"/>
+      <path d="M-200 156 C 120 96, 260 226, 520 156 S 900 76, 1180 166 S 1520 126, 1760 76"/>
+    </g>
+    <g>
+      <circle class="pulse" cx="230" cy="96" r="2.5" style="animation-delay:0s"/>
+      <circle class="pulse" cx="620" cy="146" r="2.5" style="animation-delay:1.4s"/>
+      <circle class="pulse" cx="905" cy="72" r="2.5" style="animation-delay:3.1s"/>
+      <circle class="pulse" cx="1155" cy="182" r="2.5" style="animation-delay:4.6s"/>
+      <circle class="pulse" cx="418" cy="224" r="2.5" style="animation-delay:6.2s"/>
+    </g>
+  </svg>
+
+  <div class="wrap mast-inner">
+    <p class="eyebrow">SPŠE a VOŠ Pardubice · školní rok 2026/2027</p>
+    <h1>Tvůrčí soutěže pro naše žáky</h1>
+    <p class="mast-lead">Grafika, design, fotografie, animace, komiks i vývoj aplikací. Vyberte si soutěž,
+      přečtěte si pravidla a hlídejte si uzávěrku. Seznam průběžně doplňujeme, jakmile pořadatelé vyhlásí nové ročníky.</p>
+    <p class="mast-meta" id="mastMeta"></p>
+  </div>
+
+  <div class="timeline">
+    <div class="wrap">
+      <div class="tl-head">
+        <h2>Uzávěrky v průběhu školního roku</h2>
+        <p class="tl-hint">Klikněte na měsíc pro filtrování, na tečku pro detail soutěže.</p>
+      </div>
+      <div class="tl-scroll">
+        <div class="tl-grid" id="timeline"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="toolbar">
+  <div class="wrap toolbar-inner">
+    <div class="tb-row">
+      <div class="search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+        <input type="search" id="q" placeholder="Hledat podle názvu, pořadatele nebo tématu" aria-label="Hledat soutěž">
+      </div>
+      <div class="seg" role="group" aria-label="Stav soutěže">
+        <button type="button" data-stav="aktualni" aria-pressed="true">Aktuální</button>
+        <button type="button" data-stav="ocekava" aria-pressed="false">Čeká na vyhlášení</button>
+        <button type="button" data-stav="archiv" aria-pressed="false">Archiv</button>
+        <button type="button" data-stav="vse" aria-pressed="false">Vše</button>
+      </div>
+      <select id="sort" aria-label="Řazení">
+        <option value="termin">Řadit podle uzávěrky</option>
+        <option value="nazev">Řadit podle názvu</option>
+        <option value="kategorie">Řadit podle kategorie</option>
+      </select>
+    </div>
+    <div class="tb-row">
+      <div class="chips" id="chips" role="group" aria-label="Kategorie"></div>
+      <button type="button" class="linkbtn" id="reset">Zrušit filtry</button>
+      <p class="tb-count" id="count" aria-live="polite"></p>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+  <div id="list" class="list"></div>
+  <div id="empty" class="empty" hidden>
+    <h3>Nic neodpovídá zadání</h3>
+    <p>Zkuste zrušit některý z filtrů nebo přepnout stav na „Vše“.</p>
+  </div>
+</main>
+
+<dialog id="dlg" aria-labelledby="dlgTitle">
+  <div class="dlg-head" id="dlgHead">
+    <h2 id="dlgTitle"></h2>
+    <p id="dlgOrg"></p>
+    <button class="dlg-close" id="dlgClose" aria-label="Zavřít">✕</button>
+  </div>
+  <div class="dlg-body" id="dlgBody"></div>
+</dialog>
+
+<section class="wins" id="uspechy">
+  <div class="wrap">
+    <h2>Naši žáci už uspěli. Proč ne vy?</h2>
+    <p class="lead">Výběr článků ze školního webu. Ukazují, že cesta z ateliéru nebo učebny grafiky
+      až na celostátní stupně vítězů není nijak dlouhá.</p>
+    <div class="win-grid" id="wins"></div>
+    <a class="wins-more" href="https://www.spse.cz/novinky/clanky/souteze">Všechny články o soutěžích na spse.cz →</a>
+  </div>
+</section>
+
+<section class="admin wrap" id="sprava">
+  <h2>Jak stránku udržovat</h2>
+  <p>Všechna data jsou v jediném souboru <code>index.html</code> v poli <code>SOUTEZE</code> na konci
+    dokumentu. Není potřeba žádná databáze ani redakční systém — stačí soubor otevřít v textovém editoru,
+    doplnit záznam a nahrát zpět na server.</p>
+  <ol>
+    <li>Novou soutěž přidáte zkopírováním kteréhokoli existujícího záznamu a přepsáním hodnot.
+      Povinné je jen <code>id</code>, <code>nazev</code>, <code>kategorie</code> a <code>rok</code>.</li>
+    <li>Do archivu se soutěž přesune sama, jakmile uplyne uzávěrka nebo jakmile u ní změníte
+      <code>rok</code> na starší školní rok. Nic se nemaže — archiv zůstává dostupný přes přepínač nahoře.</li>
+    <li>Soutěž, u které pořadatel zatím nezveřejnil termín, uveďte s <code>stav: "ocekava"</code>
+      a slovním odhadem v poli <code>terminPoznamka</code>. Objeví se v záložce „Čeká na vyhlášení“.</li>
+    <li>Do <code>odkazy</code> patří web pravidel, přihláška i archiv minulých ročníků — každý
+      s vlastním popisem, ať žák pozná, kam klikne.</li>
+    <li>Pole <code>overeno</code> obsahuje datum poslední kontroly u pořadatele. Zobrazuje se
+      v detailu soutěže, aby bylo zřejmé, jak čerstvá informace je.</li>
+  </ol>
+  <pre><code>{
+  id: "nazev-souteze-2027",
+  nazev: "Název soutěže",
+  poradatel: "Kdo soutěž pořádá",
+  kategorie: "grafika",          // vytvarna | grafika | obal | foto | film | komiks | digital | projekt
+  rok: "2026/2027",
+  stav: "otevreno",              // otevreno | ocekava | archiv
+  uzaverka: "2027-01-31",        // formát RRRR-MM-DD, prázdné u nevyhlášených
+  terminPoznamka: "",
+  vek: "15–19 let",
+  misto: "Kde se soutěž koná",
+  poplatek: "zdarma",            // zdarma | text s částkou
+  tymova: true,
+  strucne: "Jedna věta, o co v soutěži jde.",
+  pravidla: ["Odstavec pravidel.", "Další odstavec."],
+  terminy: [{ datum: "31. 1. 2027", co: "Uzávěrka přihlášek", klic: true }],
+  porota: "Kdo a podle čeho hodnotí.",
+  vyhlaseni: "Kdy a kde budou výsledky.",
+  odevzdani: "Jak se práce odevzdávají.",
+  odkazy: [{ url: "https://…", text: "Pravidla soutěže", typ: "pravidla" }],
+  poznamka: "",
+  overeno: "15. 9. 2026"
+}</code></pre>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h3>Střední průmyslová škola elektrotechnická a Vyšší odborná škola Pardubice</h3>
+        <p>Karla IV. 13, 530 02 Pardubice<br>
+          <a href="tel:+420466614788">+420 466 614 788</a><br>
+          <a href="mailto:spse@spse.cz">spse@spse.cz</a></p>
+      </div>
+      <div>
+        <h3>Školní web</h3>
+        <p><a href="https://www.spse.cz/">Úvodní stránka</a><br>
+          <a href="https://www.spse.cz/novinky/clanky/souteze">Články o soutěžích</a><br>
+          <a href="https://www.spse.cz/novinky/ukazky-praci">Ukázky prací žáků</a><br>
+          <a href="https://www.spse.cz/novinky/casopis-elektronka">Časopis Elektronka</a></p>
+      </div>
+      <div>
+        <h3>Obory, kterých se to týká nejvíc</h3>
+        <p><a href="https://www.spse.cz/stredni-skola/obory-m/18-20-M-01-informacni-technologie-pocitacova-grafika">IT – Počítačová grafika</a><br>
+          <a href="https://www.spse.cz/stredni-skola/obory-m/18-20-M-01-informacni-technologie-vyvoj-aplikaci">IT – Vývoj aplikací</a><br>
+          <a href="https://www.spse.cz/stredni-skola/nase-studijni-obory">Všechny studijní obory</a></p>
+      </div>
+      <div>
+        <h3>Máte tip na soutěž?</h3>
+        <p>Pošlete odkaz na propozice svému vyučujícímu grafiky nebo na
+          <a href="mailto:spse@spse.cz">spse@spse.cz</a> a doplníme ji sem.</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>Rozcestník tvůrčích soutěží · SPŠE a VOŠ Pardubice</span>
+      <span id="footUpdated"></span>
+    </div>
+  </div>
+</footer>
+<script>
+/* ══════════════════════════════════════════════════════════════════════
+   KATEGORIE
+   ══════════════════════════════════════════════════════════════════════ */
+const KATEGORIE = {
+  vytvarna:{ nazev:"Volná výtvarná tvorba", barva:"var(--k-vytvarna)" },
+  grafika: { nazev:"Grafický design a ilustrace", barva:"var(--k-grafika)" },
+  obal:    { nazev:"Obalový a produktový design", barva:"var(--k-obal)" },
+  foto:    { nazev:"Fotografie", barva:"var(--k-foto)" },
+  film:    { nazev:"Film a animace", barva:"var(--k-film)" },
+  komiks:  { nazev:"Komiks a manga", barva:"var(--k-komiks)" },
+  digital: { nazev:"Digitál, web, aplikace a hry", barva:"var(--k-digital)" },
+  projekt: { nazev:"Projekty, granty a inovace", barva:"var(--k-projekt)" }
+};
+
+/* ══════════════════════════════════════════════════════════════════════
+   ČLÁNKY O ÚSPĚŠÍCH NAŠICH ŽÁKŮ (spse.cz)
+   Nové články doplňujte na začátek pole.
+   ══════════════════════════════════════════════════════════════════════ */
+const CLANKY = [
+  { datum:"25. 5. 2026", nadpis:"3. místo v celostátní soutěži Máme rádi přírodu",
+    popis:"Andrea Málková ze 3. ročníku oboru IT – Počítačová grafika uspěla se svým grafickým dílem.",
+    url:"https://www.spse.cz/clanky/souteze/2026-andrea-malkova-ze-tretiho-rocniku-grafickeho-oboru-ziskala-treti-misto-vcelostatni-vytvarne" },
+  { datum:"22. 6. 2026", nadpis:"Brožura „Klíč ke klidu pro základní školy“",
+    popis:"Pětice žáků třetího ročníku grafiky proměnila celoroční práci v projekt s celorepublikovým přesahem.",
+    url:"https://www.spse.cz/clanky/2026-uspech-nasich-grafiku-zaci-vytvorili-unikatni-brozuru-klic-ke-klidu-pro-zakladni-skoly" },
+  { datum:"13. 4. 2026", nadpis:"Tour de App 2026 – 1. místo",
+    popis:"Tým bobr layer prošel třemi koly středoevropské IT soutěže a zvítězil v mezinárodní konkurenci.",
+    url:"https://www.spse.cz/clanky/souteze/2026-tour-de-app-uspech-na-mezinarodni-urovni" },
+  { datum:"29. 4. 2026", nadpis:"Postup do národního finále SOČ",
+    popis:"Krajské kolo Středoškolské odborné činnosti v Chrudimi a naše postupující práce.",
+    url:"https://www.spse.cz/clanky/souteze/2026-postup-do-narodniho-finale-soc-krajske-kolo-chrudim" },
+  { datum:"23. 6. 2026", nadpis:"Chodby na SPŠE ožívají",
+    popis:"Žáci grafiky realizovali vlastní návrh výmalby chodeb v duchu pixel artu s pardubickými dominantami.",
+    url:"https://www.spse.cz/clanky/2026-chodby-na-spse-ozivaji" },
+  { datum:"16. 6. 2026", nadpis:"Projekt „Chodby 2.0“ získal na Burze filantropie 72 000 Kč",
+    popis:"Studentský návrh obstál před porotou dárců a získal financování na realizaci.",
+    url:"https://www.spse.cz/clanky/2026-velka-radost-na-spse-projekt-chodby-2-0-ziskal-na-burze-filantropie-72-000-kc" },
+  { datum:"5. 6. 2026", nadpis:"Krajské kolo České AI olympiády",
+    popis:"Naši žáci na první celostátní soutěži v umělé inteligenci pro středoškoláky.",
+    url:"https://www.spse.cz/clanky/souteze/2026-nasi-zaci-zazarili-vkrajskem-kole-ceske-ai-olympiady" },
+  { datum:"9.–10. 4. 2026", nadpis:"DemocraTICon 2026 – digitální dovednosti",
+    popis:"Středoškolská soutěž v digitálních dovednostech, mediální gramotnosti a kritickém myšlení.",
+    url:"https://www.spse.cz/clanky/souteze/2026-stredoskolska-soutez-vdigitalnich-dovednostech-democraticon" }
+];
+
+/* ══════════════════════════════════════════════════════════════════════
+   SOUTĚŽE
+   Jediné místo, kde se obsah stránky upravuje. Popis polí a vzorový
+   záznam najdete v sekci „Jak stránku udržovat“ výše.
+   Stav ke dni 15. 9. 2026.
+   ══════════════════════════════════════════════════════════════════════ */
+const SOUTEZE = [
+
+/* ── PARDUBICKÝ KRAJ A REGION ─────────────────────────────────────── */
+{
+  id:"zdrava-nemocna-priroda-pk-17",
+  nazev:"Zdravá a nemocná příroda Pardubického kraje",
+  poradatel:"Pomáháme přírodě, z.s. a Pardubický kraj",
+  kategorie:"vytvarna", rok:"2026/2027", stav:"otevreno",
+  uzaverka:"2026-12-18", terminPoznamka:"17. ročník; propozice pořadatel obvykle zveřejňuje na podzim",
+  vek:"studenti od 15 let (samostatná středoškolská kategorie)",
+  misto:"Pardubický kraj, vyhlášení v Pardubicích", poplatek:"zdarma", tymova:false,
+  strucne:"Regionální výtvarná soutěž propojující výtvarné vyjádření s environmentální osvětou a ochranou biodiverzity.",
+  pravidla:[
+    "Pro středoškolskou kategorii jsou vypsány čtyři tematické okruhy: Zdravá a nemocná příroda Pardubického kraje, Druhý život odpadů po recyklaci, Železnice – ekologická doprava budoucnosti a Odpadky okolo cest a co s nimi.",
+    "Od středoškoláků porota očekává analytičtější přístup než od mladších kategorií — od realistické či expresivní malby po angažovaný plakát nebo komiksový pás.",
+    "Každá práce musí být na rubu označena identifikačními údaji autora a kontaktem na zletilého autora nebo zákonného zástupce."
+  ],
+  terminy:[
+    { datum:"18. 12. 2026", co:"Uzávěrka – doručení fyzických prací poštou", klic:true },
+    { datum:"únor 2027", co:"Slavnostní vyhlášení výsledků" }
+  ],
+  porota:"Odborná porota jmenovaná pořadatelem; hodnotí se naplnění tématu, výtvarná kvalita a sdělnost.",
+  vyhlaseni:"Únor 2027 v Sále Jana Kašpara Krajského úřadu Pardubického kraje. Vybraná díla bývají zařazena do charitativní edice projektu Čeští mistři.",
+  odevzdani:"Fyzické originály poštou v obálce nadepsané „VÝTVARNÁ SOUTĚŽ“ na adresu spolku Pomáháme přírodě.",
+  odkazy:[
+    { url:"https://pomahameprirode.cz/", text:"Web pořadatele Pomáháme přírodě", typ:"pravidla" },
+    { url:"https://pomahameprirode.cz/aktuality/", text:"Aktuality a vyhlášení ročníků", typ:"archiv" },
+    { url:"https://www.cestimistri.cz/mistr/pomahame-prirode/", text:"Charitativní edice Čeští mistři", typ:"info" },
+    { url:"https://www.klickevzdelani.cz/uspech-v-soutezi-zdrava-a-nemocna-priroda-pk/", text:"Výsledky minulého ročníku na portálu Klíč ke vzdělání", typ:"archiv" }
+  ],
+  poznamka:"K 15. 9. 2026 je na webu pořadatele stále dohledatelný 16. ročník. Pokračování je velmi pravděpodobné, ale termín 18. 12. 2026 je nutné před odevzdáním ověřit.",
+  overeno:"15. 9. 2026"
+},
+{
+  id:"oci-se-divaji-srdce-vidi-2026",
+  nazev:"Oči se dívají, srdce vidí",
+  poradatel:"Středisko náhradní rodinné péče a Regionální muzeum v Litomyšli",
+  kategorie:"vytvarna", rok:"2026/2027", stav:"otevreno",
+  uzaverka:"2026-12-18", terminPoznamka:"",
+  vek:"dospívající autoři, středoškoláci", misto:"Litomyšl, Pardubický kraj", poplatek:"zdarma", tymova:false,
+  strucne:"Výtvarná výzva na téma rodinného zázemí, bezpečí domova a mezilidské soudržnosti.",
+  pravidla:[
+    "Téma je formulováno jako „Co vidí moje oči a co cítí moje srdce“ — reflexe domova, zázemí a vztahů.",
+    "Přijímány jsou práce libovolnou plošnou technikou ve formátech A4 až A2.",
+    "Oceněná díla tvoří základ jarní výstavy v prostorách litomyšlského muzea."
+  ],
+  terminy:[
+    { datum:"18. 12. 2026", co:"Uzávěrka – fyzické odevzdání prací", klic:true },
+    { datum:"jaro 2027", co:"Výstava oceněných prací v Regionálním muzeu v Litomyšli" }
+  ],
+  porota:"Porota složená ze zástupců pořadatele a muzea.",
+  vyhlaseni:"Na jaře 2027 v rámci vernisáže výstavy v Litomyšli.",
+  odevzdani:"Fyzicky, poštou nebo osobně na adresu pořadatele.",
+  odkazy:[],
+  poznamka:"Předchozí ročník měl uzávěrku 19. 12. 2025 a byl avizován jako jednorázový. Termín i pokračování je nutné ověřit přímo u Střediska náhradní rodinné péče.",
+  overeno:"15. 9. 2026"
+},
+{
+  id:"paradni-socialni-napad-2027",
+  nazev:"Parádní sociální nápad",
+  poradatel:"CzechInvest, Centrum Kosatec z.s. a inkubátor P-PINK",
+  kategorie:"projekt", rok:"2026/2027", stav:"ocekava",
+  uzaverka:"2027-04-15", terminPoznamka:"ročník 2027 zatím nebyl oficiálně vyhlášen, termín vychází z minulého ročníku",
+  vek:"od 15 let, jednotlivci i týmy 2–5 členů", misto:"Centrum Kosatec, Pardubice", poplatek:"zdarma", tymova:true,
+  strucne:"Regionální soutěž nápadů se sociálním přesahem — od vizuálních pomůcek přes 3D tisk po digitální rozhraní.",
+  pravidla:[
+    "Hledají se inovativní nápady na produkty nebo digitální rozhraní, které zlepšují život lidem s handicapem nebo rozšiřují portfolio služeb sociálních podniků.",
+    "Přihlašuje se strukturovaný koncept nápadu, nikoli hotový produkt.",
+    "Nejlepších deset projektů postupuje do finálového kola s veřejnou prezentací před odbornou porotou."
+  ],
+  terminy:[
+    { datum:"polovina dubna 2027", co:"Uzávěrka přihlášek konceptu", klic:true },
+    { datum:"konec dubna 2027", co:"Finálové kolo a prezentace v Centru Kosatec" }
+  ],
+  porota:"Odborná porota složená ze zástupců CzechInvestu, sociálních podniků a inkubátoru P-PINK.",
+  vyhlaseni:"Bezprostředně po finálových prezentacích na konci dubna 2027 v Pardubicích.",
+  odevzdani:"Online přihláškou se strukturovaným popisem nápadu.",
+  odkazy:[],
+  poznamka:"Ideální soutěž pro mezioborový tým — grafik, programátor a autor konceptu. Vítězové získávají věcné i finanční ceny a mentoring pro realizaci.",
+  overeno:"15. 9. 2026"
+},
+{
+  id:"eop-financni-dary-2027",
+  nazev:"Soutěž o finanční dary EOP pro školní projekty",
+  poradatel:"Elektrárny Opatovice, a.s.",
+  kategorie:"projekt", rok:"2026/2027", stav:"ocekava",
+  uzaverka:"2027-04-05", terminPoznamka:"nové kolo zatím nevyhlášeno; předchozí mělo uzávěrku 8. 4. 2026",
+  vek:"studentské týmy středních škol", misto:"Pardubický a Královéhradecký kraj", poplatek:"zdarma", tymova:true,
+  strucne:"Grantová výzva pro školní týmy — až 50 000 Kč na realizaci vlastního projektu.",
+  pravidla:[
+    "Podává se projektový záměr obsahující rozpočet, časový harmonogram a účel využití prostředků.",
+    "Prostředky lze využít například na nákup profesionální grafické techniky, ateliérového softwaru nebo realizaci vlastní multimediální výstavy.",
+    "Vybrané týmy obhajují své záměry před podnikovou komisí."
+  ],
+  terminy:[
+    { datum:"počátek dubna 2027", co:"Podání projektového záměru přes online formulář", klic:true },
+    { datum:"červen 2027", co:"Obhajoby vybraných záměrů před komisí" }
+  ],
+  porota:"Podniková komise Elektráren Opatovice.",
+  vyhlaseni:"Po obhajobách v červnu 2027.",
+  odevzdani:"Online formulář s přílohou projektového záměru.",
+  odkazy:[],
+  poznamka:"Naše škola s EOP dlouhodobě spolupracuje. Jde spíše o grant než o klasickou soutěž — výstupem je financovaný projekt, ne umístění.",
+  overeno:"15. 9. 2026"
+},
+
+/* ── CELOSTÁTNÍ ČESKÉ SOUTĚŽE ─────────────────────────────────────── */
+{
+  id:"patockovo-memorandum-vytvarna-2027",
+  nazev:"Patočkovo memorandum – výtvarná kategorie",
+  poradatel:"Gymnázium prof. Jana Patočky, Archiv Jana Patočky z.s.",
+  kategorie:"vytvarna", rok:"2026/2027", stav:"otevreno",
+  uzaverka:"2026-10-15", terminPoznamka:"uzávěrka přihlášek; práce se odevzdávají do 26. 11. 2026",
+  vek:"studenti středních škol, jednotlivci i 2–3členné týmy", misto:"Praha – Obecní dům",
+  poplatek:"zdarma", tymova:true,
+  strucne:"Soutěž k 50. výročí Charty 77 na téma „Nesvoboda všedního dne“ — od malby po performance a videoart.",
+  pravidla:[
+    "Téma zní Nesvoboda všedního dne. Jako inspirační zdroj lze využít text Jana Patočky, který je přílohou propozic.",
+    "Přijímá se vizuálně umělecké dílo v tradičních technikách (malba, kresba, grafika, socha, fotografie) i konceptuální a akční realizace (koncept, performance, happening, videoart).",
+    "Soutěží jednotlivci nebo 2–3členné týmy, které mohou být smíšené napříč ročníky.",
+    "Každá střední škola může do soutěže vyslat celkem 4 týmy a každý tým smí soutěžit pouze v jedné kategorii.",
+    "Kromě díla se odevzdává písemný komentář v rozsahu maximálně jedné normostrany — vysvětlení záměru a hlavní myšlenky, kontext a inspirace."
+  ],
+  terminy:[
+    { datum:"15. 10. 2026", co:"Uzávěrka přihlášek přes formulář", klic:true },
+    { datum:"26. 11. 2026", co:"Uzávěrka zasílání soutěžních prací", klic:true },
+    { datum:"18. 12. 2026", co:"Vyhlášení výsledků 1. kola" },
+    { datum:"15. 1. 2027", co:"Slavnostní finále v Obecním domě v Praze" }
+  ],
+  porota:"Porota hodnotí naplnění tématu, technické a formální zpracování, originalitu a formulaci myšlenky v písemném komentáři. Do finále postupuje 7 vítězných týmů této kategorie.",
+  vyhlaseni:"Výsledky 1. kola 18. 12. 2026, slavnostní finále v pátek 15. ledna 2027 v Obecním domě v Praze s doprovodným kulturním programem a hodnotnými cenami.",
+  odevzdani:"E-mailem na patockovomemorandum@gpjp.cz do 26. 11. 2026. Posílají se fotografie či video díla (.jpg, .pdf, .mp4, .avi nebo odkaz na YouTube) plus písemný komentář ve Wordu nebo PDF. V e-mailu je nutné uvést jméno soutěžního týmu, soutěžní kategorii a název školy.",
+  odkazy:[
+    { url:"https://www.gpjp.cz", text:"Web Gymnázia prof. Jana Patočky", typ:"pravidla" },
+    { url:"mailto:lucie.solnickova@gpjp.cz", text:"Dotazy k soutěži: Lucie Solnická", typ:"kontakt" },
+    { url:"mailto:patockovomemorandum@gpjp.cz", text:"Adresa pro odevzdání prací", typ:"kontakt" }
+  ],
+  poznamka:"Nejbližší uzávěrka v tomto seznamu. Přihlášku je nutné odeslat do 15. 10. 2026, samotné dílo se dokončuje až do konce listopadu — přihlásit se tedy vyplatí i s rozpracovaným konceptem.",
+  overeno:"15. 9. 2026"
+},
+{
+  id:"teendesign-2026",
+  nazev:"TEENDESIGN 2026",
+  poradatel:"Fakulta designu a umění Ladislava Sutnara, ZČU v Plzni",
+  kategorie:"grafika", rok:"2026/2027", stav:"otevreno",
+  uzaverka:"2027-01-31", terminPoznamka:"přihlašování otevřeno od 1. 11. 2026",
+  vek:"žáci 1.–3. ročníků SŠ (maturitní ročníky vyloučeny)", misto:"Plzeň – Sutnarka", poplatek:"zdarma", tymova:false,
+  strucne:"Nejvýznamnější česká přehlídka středoškolského designu, hodnotící tandem žák – pedagog.",
+  pravidla:[
+    "Soutěž je určena žákům 1. až 3. ročníků středních škol s výukou výtvarných a designérských oborů. Maturitní ročníky se nemohou účastnit.",
+    "Hodnotí se autorský tandem student – pedagog, čímž soutěž vyzdvihuje didaktické vedení a kvalitu zadané školní úlohy.",
+    "Soutěžní kategorie: Grafický design, Design, Audiovize a Výtvarné umění.",
+    "Přihlašují se školní práce vzniklé v kalendářním roce 2026.",
+    "Odevzdává se PDF prezentace obsahující skici, moodboardy, proces vzniku a finální realizaci — porota sleduje myšlenkový posun od prvotního nápadu k výsledku."
+  ],
+  terminy:[
+    { datum:"1. 11. 2026", co:"Otevření přihlašování přes portál ZČU" },
+    { datum:"31. 1. 2027", co:"Uzávěrka přihlášek (23:59)", klic:true },
+    { datum:"jaro 2027", co:"Vyhlášení výsledků a výstava" }
+  ],
+  porota:"Pedagogové a odborníci Fakulty designu a umění Ladislava Sutnara.",
+  vyhlaseni:"Na jaře 2027 na půdě fakulty. Vítězové získávají stipendium na mezinárodní letní školu umění ArtCamp.",
+  odevzdani:"Výhradně digitálně přes univerzitní portál ZČU formou PDF prezentace. Přihlášku podává vyučující za žáka.",
+  odkazy:[
+    { url:"https://www.fdu.zcu.cz/cs/Admission/BachelorStudies/Teendesign.html", text:"Oficiální stránka soutěže TEENDESIGN", typ:"pravidla" },
+    { url:"https://info.zcu.cz/Teendesign-jako-prvni-krok--Sutnarka-pomaha-budoucim-umelcum-a-designerum/clanek.jsp?id=9005", text:"O smyslu soutěže – portál ZČU", typ:"info" },
+    { url:"https://www.regionplzen.cz/zpravodajstvi/sutnarka-zna-viteze-teendesignu--do-sout-301710/", text:"Vítězové minulého ročníku", typ:"archiv" }
+  ],
+  poznamka:"Pro naše žáky oboru IT – Počítačová grafika nejlépe odpovídající česká soutěž. Do přihlášky je potřeba doložit proces vzniku, takže je dobré od začátku archivovat skici a rozpracované verze.",
+  overeno:"15. 9. 2026"
+},
+{
+  id:"grafika-roku-2026",
+  nazev:"Grafika roku – studentská kategorie",
+  poradatel:"Nadační fond Grafiky roku, Galerie Hollar Praha",
+  kategorie:"grafika", rok:"2026/2027", stav:"otevreno",
+  uzaverka:"2027-01-31", terminPoznamka:"pro díla vytvořená v kalendářním roce 2026",
+  vek:"studenti; u nezletilých je nutné ověřit podmínky", misto:"Praha – Galerie Hollar", poplatek:"ověřte u pořadatele", tymova:false,
+  strucne:"Přehlídka autorského tisku a volné grafiky se samostatnou studentskou kategorií.",
+  pravidla:[
+    "Přijímají se autorské tisky vytvořené v kalendářním roce 2026.",
+    "Povolené techniky zahrnují hlubotisk, výškotisk, litografii a sítotisk i počítačovou grafiku.",
+    "Odevzdávají se originální grafické listy, nikoli reprodukce."
+  ],
+  terminy:[
+    { datum:"31. 1. 2027", co:"Uzávěrka – fyzické odevzdání do Galerie Hollar", klic:true },
+    { datum:"jaro 2027", co:"Výstava a vyhlášení v Galerii Hollar" }
+  ],
+  porota:"Odborná porota Nadačního fondu Grafiky roku; součástí je i Cena Vladimíra Boudníka.",
+  vyhlaseni:"Na jaře 2027 v rámci výstavy v Galerii Hollar v Praze.",
+  odevzdani:"Fyzicky, doručením originálních grafických listů do Galerie Hollar.",
+  odkazy:[
+    { url:"https://www.grafikaroku.cz/", text:"Web Nadačního fondu Grafiky roku", typ:"pravidla" }
+  ],
+  poznamka:"Před přihlášením je nutné ověřit, zda pořadatel přijímá nezletilé autory a jaký je přihlašovací poplatek. K 15. 9. 2026 nebyla nová výzva pro díla z roku 2026 zveřejněna.",
+  overeno:"15. 9. 2026"
+},
+{
+  id:"grafika-hobby-centrum-4",
+  nazev:"GRAFIKA! – celostátní soutěž v autorské grafice",
+  poradatel:"DDM Praha 4 – Hobby centrum 4",
+  kategorie:"grafika", rok:"2026/2027", stav:"ocekava",
+  uzaverka:"", terminPoznamka:"ročník pro rok 2027 zatím nebyl vyhlášen; zaslané propozice patří ročníku 2025",
+  vek:"autoři 15–20 let", misto:"Praha", poplatek:"zdarma", tymova:false,
+  strucne:"Celostátní soutěž v autorské grafice kombinující elektronické předkolo s fyzickou výstavou a tiskařským workshopem.",
+  pravidla:[
+    "Soutěž je otevřena autorům od 15 do 20 let.",
+    "Probíhá ve dvou fázích: elektronické předkolo a následně fyzická výstava vybraných prací.",
+    "Součástí je tiskařský workshop pod vedením předních ilustrátorů."
+  ],
+  terminy:[
+    { datum:"zatím nevyhlášeno", co:"Sledujte web pořadatele od podzimu 2026" }
+  ],
+  porota:"Ilustrátoři a grafici spolupracující s Hobby centrem 4.",
+  vyhlaseni:"Součástí výstavy vybraných prací v Praze.",
+  odevzdani:"Elektronicky v předkole, vybraní autoři dodávají fyzické tisky.",
+  odkazy:[],
+  poznamka:"Kontrolu doporučujeme opakovat od listopadu 2026.",
+  overeno:"15. 9. 2026"
+},
+{
+  id:"model-young-package-2027",
+  nazev:"Model Young Package – kategorie High School",
+  poradatel:"Model Group",
+  kategorie:"obal", rok:"2026/2027", stav:"otevreno",
+  uzaverka:"2027-04-15", terminPoznamka:"1. kolo do poloviny dubna 2027, finalisté zasílají fyzický prototyp v květnu",
+  vek:"15–21 let (kategorie High School)", misto:"mezinárodní, finále v ČR", poplatek:"zdarma", tymova:false,
+  strucne:"Světová špička v konstrukci obalů z papíru. Aktuální ročník má motto „Unpacking Taboo“.",
+  pravidla:[
+    "Motto ročníku vyzývá k vytvoření udržitelných obalů pro produkty, o nichž se ve společnosti mlčí — intimní péče, mentální zdraví, sociální tabu.",
+    "Konstrukce musí sestávat primárně z papíru, vlnité nebo hladké lepenky.",
+    "V prvním kole se nahrává digitální PDF prezentace s konstrukčním výkresem a fotografiemi makety.",
+    "Vybraní finalisté zasílají v květnu fyzický prototyp k posouzení mezinárodní porotě."
+  ],
+  terminy:[
+    { datum:"polovina dubna 2027", co:"Uzávěrka 1. kola – nahrání PDF prezentace", klic:true },
+    { datum:"květen 2027", co:"Zaslání fyzického prototypu (pouze finalisté)" },
+    { datum:"jaro/léto 2027", co:"Vyhlášení vítězů" }
+  ],
+  porota:"Mezinárodní porota designérů a odborníků na obalovou technologii.",
+  vyhlaseni:"Vyhlášení v rámci doprovodné akce pořadatele. Soutěž disponuje finančním fondem 29 000 EUR a vítězové postupují do profesní výzvy s reálnými klienty.",
+  odevzdani:"Online nahrání PDF prezentace v 1. kole, poštovní zaslání prototypu ve 2. kole.",
+  odkazy:[
+    { url:"https://www.modelgroup.com/cz/cs/model-young-package.html", text:"Oficiální stránka soutěže (česky)", typ:"pravidla" },
+    { url:"https://www.modelgroup.com/language-masters/en/model-young-package.html", text:"Oficiální stránka soutěže (anglicky)", typ:"pravidla" },
+    { url:"https://www.infodesigners.eu/competitions/model-young-package-2026", text:"Souhrn podmínek minulého ročníku", typ:"archiv" }
+  ],
+  poznamka:"Ročník 2026 skončil, přesné datum uzávěrky ročníku 2027 pořadatel obvykle upřesňuje na přelomu listopadu a prosince.",
+  overeno:"15. 9. 2026"
+},
+{
+  id:"best-in-design-2027",
+  nazev:"Best in Design 2027",
+  poradatel:"Zlin Design Week, Univerzita Tomáše Bati ve Zlíně",
+  kategorie:"grafika", rok:"2026/2027", stav:"otevreno",
+  uzaverka:"2027-02-05", terminPoznamka:"přihlašování obvykle od 1. 12. 2026 do začátku února 2027",
+  vek:"mladí tvůrci do 30 let", misto:"Zlín", poplatek:"zdarma", tymova:false,
+  strucne:"Mezinárodní designérská soutěž, kde se středoškoláci poměří přímo s univerzitními studenty.",
+  pravidla:[
+    "Soutěž je otevřena mladým tvůrcům do 30 let, včetně středoškoláků.",
+    "Kategorie: Communication Design, Product & Industrial Design, Fashion Design a Service Design.",
+    "Přihlašují se práce vzniklé v posledních dvou letech.",
+    "Přihlášení je bezplatné a probíhá digitálně."
+  ],
+  terminy:[
+    { datum:"1. 12. 2026", co:"Předpokládané otevření přihlášek" },
+    { datum:"začátek února 2027", co:"Uzávěrka přihlášek", klic:true },
+    { datum:"jaro 2027", co:"Finále v rámci festivalu Zlin Design Week" }
+  ],
+  porota:"Mezinárodní porota festivalu Zlin Design Week.",
+  vyhlaseni:"V rámci festivalu Zlin Design Week na jaře 2027. Finanční ocenění dosahuje až 1 500 EUR pro celkového vítěze.",
+  odevzdani:"Digitálně přes registrační formulář na webu festivalu.",
+  odkazy:[
+    { url:"https://zlindesignweek.com/2026/best-in-design/", text:"Stránka soutěže Best in Design", typ:"pravidla" },
+    { url:"https://zlindesignweek.com/2026/best-in-design/registrace/", text:"Registrace do soutěže", typ:"prihlaska" },
+    { url:"https://zlindesignweek.com/2026/best-in-design/harmonogram-souteze/", text:"Harmonogram soutěže", typ:"info" },
+    { url:"https://zlindesignweek.com/2026/2026/05/13/absolutni-vitezkou-best-in-design-2026-se-stala-oliwia-snieg-s-projektem-zamerenym-na-ochranu-vod/", text:"Vítězka ročníku 2026", typ:"archiv" },
+    { url:"https://zlindesignweek.com/2026/2026/04/10/best-in-design-2026-predstavujeme-letosni-finalisty/", text:"Finalisté ročníku 2026", typ:"archiv" }
+  ],
+  poznamka:"Ročník 2026 skončil. Termíny pro 2027 vycházejí z předchozího ročníku a je potřeba je ověřit po vyhlášení, obvykle na začátku prosince.",
+  overeno:"15. 9. 2026"
+},
+{
+  id:"czech-photo-junior-press-2026",
+  nazev:"Czech Photo Junior (Czech Press Photo)",
+  poradatel:"Czech Photo o.p.s.",
+  kategorie:"foto", rok:"2026/2027", stav:"otevreno",
+  uzaverka:"2026-10-31", terminPoznamka:"přesné datum uzávěrky ověřte na webu, registrace probíhá na podzim",
+  vek:"středoškolská mládež", misto:"Praha – Nová budova Národního muzea", poplatek:"zdarma (juniorská kategorie)", tymova:false,
+  strucne:"Juniorská větev nejprestižnější české žurnalistické fotosoutěže. Dokument, reportáž, společenská fotografie.",
+  pravidla:[
+    "Pravidla striktně zakazují syntetickou manipulaci za pomoci umělé inteligence.",
+    "Vyžaduje se dodržení novinářského etického kodexu — povoleny jsou pouze tonální úpravy, čištění a ořez.",
+    "Doporučujeme archivovat surová data (RAW), aby bylo možné prokázat původnost snímku."
+  ],
+  terminy:[
+    { datum:"říjen 2026", co:"Uzávěrka online registrace a nahrání snímků", klic:true },
+    { datum:"leden 2027", co:"Vernisáž a výstava oceněných autorů" }
+  ],
+  porota:"Mezinárodní porota Czech Press Photo složená z fotografů a obrazových redaktorů.",
+  vyhlaseni:"Výstava a vernisáž oceněných autorů v Nové budově Národního muzea v Praze v lednu 2027.",
+  odevzdani:"Online registrace a nahrání snímků přes web pořadatele.",
+  odkazy:[
+    { url:"https://www.czechphoto.org/", text:"Web Czech Photo o.p.s.", typ:"pravidla" },
+    { url:"https://www.czechphoto.org/detail-novinky/2717-30/slavnostni-vyhlaseni-czech-photo-junior-2025/", text:"Vyhlášení Czech Photo Junior 2025", typ:"archiv" },
+    { url:"https://www.czechphoto.org/detail-novinky/2629-30/czech-press-photo-prodluzuje-termin-prihlasovani/", text:"Novinky k přihlašování", typ:"info" }
+  ],
+  poznamka:"Nezaměňujte profesionální Czech Press Photo s juniorskou kategorií. Hlavní soutěž přijímá práce od 1. 9. 2026; samostatné podmínky juniorské kategorie pro tento ročník bylo k 15. 9. 2026 potřeba ověřit přímo u pořadatele.",
+  overeno:"15. 9. 2026"
+},
+{
+  id:"czech-nature-photo-junior-2027",
+  nazev:"Czech Nature Photo – juniorská kategorie",
+  poradatel:"Czech Photo o.p.s.",
+  kategorie:"foto", rok:"2026/2027", stav:"otevreno",
+  uzaverka:"2027-01-11", terminPoznamka:"",
+  vek:"středoškolská mládež", misto:"Praha", poplatek:"zdarma (juniorská kategorie)", tymova:false,
+  strucne:"Přírodní fotografie — volně žijící zvířata, rostliny a krajina, s důrazem na etiku fotografování.",
+  pravidla:[
+    "Podmínkou je etický přístup k přírodě — bez rušení živočichů v jejich přirozeném prostředí.",
+    "Zakázány jsou generativní a syntetické zásahy do snímku.",
+    "Účast v juniorské kategorii je bezplatná."
+  ],
+  terminy:[
+    { datum:"11. 1. 2027", co:"Uzávěrka přihlášek", klic:true },
+    { datum:"jaro 2027", co:"Výstava a vyhlášení vítězů" }
+  ],
+  porota:"Odborná porota přírodních fotografů.",
+  vyhlaseni:"Na jaře 2027 v rámci výstavy Czech Nature Photo v Praze.",
+  odevzdani:"Online nahrání snímků přes web pořadatele.",
+  odkazy:[
+    { url:"https://www.czechphoto.org/cnp/pravidla-cnp/", text:"Pravidla Czech Nature Photo", typ:"pravidla" },
+    { url:"https://www.czechphoto.org/", text:"Web Czech Photo o.p.s.", typ:"info" }
+  ],
+  poznamka:"",
+  overeno:"15. 9. 2026"
+},
+{
+  id:"animag-kromeriz-2027",
+  nazev:"ANIMÁG Kroměříž 2027",
+  poradatel:"VOŠ pedagogická a sociální a SPgŠ Kroměříž",
+  kategorie:"film", rok:"2026/2027", stav:"otevreno",
+  uzaverka:"2027-03-31", terminPoznamka:"ročník 2027 zatím nebyl oficiálně vyhlášen, termín vychází z předchozích ročníků",
+  vek:"15–19 let", misto:"Kroměříž – kino Nadsklepí", poplatek:"zdarma", tymova:true,
+  strucne:"Klíčový český festival autorské animace pro středoškoláky, s vlastní kategorií pro školy bez výtvarné specializace.",
+  pravidla:[
+    "Soutěž rozlišuje dvě kategorie: střední všeobecné školy a gymnázia bez specializované výuky versus střední umělecké školy a oborová filmová studia.",
+    "Přijímá se stop-motion animace, ploškový film, loutková tvorba i komplexní digitální 2D a 3D projekty.",
+    "Nutná je licenční čistota zvukové složky — použijte výhradně autorskou hudbu nebo nahrávky s otevřenou licencí. Porušení autorských práv vede k okamžité diskvalifikaci."
+  ],
+  terminy:[
+    { datum:"31. 3. 2027", co:"Uzávěrka – digitální odeslání filmů", klic:true },
+    { datum:"jaro 2027", co:"Projekce v kině Nadsklepí a vyhlášení" }
+  ],
+  porota:"Porota složená z animátorů, pedagogů a filmových profesionálů.",
+  vyhlaseni:"Vybraná pásma jsou promítána v kině Nadsklepí v Kroměříži a prezentována na Mezinárodním festivalu filmů pro děti a mládež ve Zlíně.",
+  odevzdani:"Digitálně přes přihlašovací formulář festivalu.",
+  odkazy:[
+    { url:"https://www.animag-kromeriz.cz/", text:"Oficiální web festivalu ANIMÁG", typ:"pravidla" },
+    { url:"https://www.filmvychova.cz/kdo-je-kdo/festivaly/animag/", text:"Profil festivalu na Filmvýchova.cz", typ:"info" },
+    { url:"https://www.zkola.cz/animag-kromeriz-2026-se-ohlizi-za-uspechem-aneb-jubilejni-desaty-rocnik-v-magickem-odkazu-milose-macourka/", text:"Ohlédnutí za 10. ročníkem (2026)", typ:"archiv" },
+    { url:"https://www.zkola.cz/filmarem-v-lavici-jak-promenit-behem-par-tydnu-skolni-projekt-v-celostatni-uspech-na-soutezi-animag-2026/", text:"Jak proměnit školní projekt v celostátní úspěch", typ:"info" }
+  ],
+  poznamka:"Kontrolu vyhlášení nového ročníku doporučujeme od listopadu 2026.",
+  overeno:"15. 9. 2026"
+},
+{
+  id:"festival-baf-bilovec-2027",
+  nazev:"Festival BAF Bílovec – Bílovecký amatérský film",
+  poradatel:"DDM Bílovec ve spolupráci s platformou Filmdat",
+  kategorie:"film", rok:"2026/2027", stav:"otevreno",
+  uzaverka:"2027-04-15", terminPoznamka:"třetí ročník zatím nebyl oficiálně zveřejněn",
+  vek:"studenti středních škol", misto:"Bílovec – městské kino", poplatek:"zdarma", tymova:true,
+  strucne:"Filmový festival s vlastní kategorií „Svět na výšku“ pro vertikální videa 9:16 a vertikální digitální komiksy.",
+  pravidla:[
+    "Vedle standardních kategorií pro studenty středních filmových škol má festival samostatnou kategorii Svět na výšku pro vertikální videa v poměru stran 9:16 — formát pro TikTok, Reels a Shorts.",
+    "Do kategorie Svět na výšku patří i vertikální digitální komiksy.",
+    "Nezbytná je licenční čistota zvukové stopy; porušení autorských práv vede k diskvalifikaci."
+  ],
+  terminy:[
+    { datum:"15. 4. 2027", co:"Uzávěrka elektronických přihlášek", klic:true },
+    { datum:"červen 2027", co:"Veřejné projekce v bíloveckém kině" }
+  ],
+  porota:"Porota festivalu složená z filmových tvůrců a pedagogů.",
+  vyhlaseni:"V červnu 2027 v rámci veřejných projekcí v Bílovci.",
+  odevzdani:"Elektronicky přes portál Filmdat.",
+  odkazy:[
+    { url:"https://www.filmdat.cz/souteze.php?detail=953&propozice", text:"Propozice festivalu BAF", typ:"pravidla" },
+    { url:"https://www.filmdat.cz/souteze.php?detail=953&oceneni", text:"Ocenění minulých ročníků", typ:"archiv" },
+    { url:"https://www.filmdat.cz/souteze.php?detail=953", text:"Přehled soutěže na Filmdat", typ:"info" }
+  ],
+  poznamka:"Kategorie vertikálního videa je vstřícná i k žákům, kteří netočí klasický film — stačí telefon a dobrý nápad.",
+  overeno:"15. 9. 2026"
+},
+{
+  id:"junior-internet-amavet-2027",
+  nazev:"Junior Internet AMAVET – 22. ročník",
+  poradatel:"AMAVET a Fakulta informatiky a informačních technológií STU v Bratislavě",
+  kategorie:"digital", rok:"2026/2027", stav:"otevreno",
+  uzaverka:"2027-03-01", terminPoznamka:"",
+  vek:"středoškoláci z ČR a SR", misto:"Bratislava – FIIT STU", poplatek:"zdarma", tymova:true,
+  strucne:"Soutěžní konference pro weby, aplikace a UI/UX design s osobním pitchingem před porotou.",
+  pravidla:[
+    "Kategorie Junior Digitálna inovácia je určena webům a funkčním nativním či webovým aplikacím s reálným tržním dopadem.",
+    "Kategorie Junior Design se zaměřuje na UI/UX design, design systémy, přístupnost a grafické zpracování rozhraní.",
+    "Dále se soutěží v kategoriích Junior Content (digitální video obsah a multimédia) a Junior Text.",
+    "Soutěž je dvoukolová: po online uzávěrce hodnotí projekty oborová komise, která vybrané finalisty pozve k osobní prezentaci.",
+    "Finálová prezentace trvá 3,5 minuty."
+  ],
+  terminy:[
+    { datum:"1. 3. 2027", co:"Online uzávěrka přihlášek", klic:true },
+    { datum:"duben 2027", co:"Finálový pitching na FIIT STU v Bratislavě" }
+  ],
+  porota:"Oborová komise akademiků FIIT STU a odborníků z praxe.",
+  vyhlaseni:"V dubnu 2027 v Bratislavě. Vítězové získávají finanční stipendia a možnost přijetí na univerzitu bez přijímacích zkoušek.",
+  odevzdani:"Online přihláškou na webu soutěže; finalisté prezentují osobně.",
+  odkazy:[
+    { url:"https://www.juniorinternet.sk/cms/", text:"Oficiální web Junior Internet AMAVET", typ:"pravidla" },
+    { url:"https://www.amavet.sk/junior-internet-amavet-2026-registracia-je-spustena/", text:"Informace o registraci (minulý ročník)", typ:"archiv" },
+    { url:"https://vedanadosah.cvtisr.sk/ine/junior-internet-amavet-2026-v-kategorii-junior-digitalna-inovacia-zvitazil-siestak-juraj-kollar/", text:"Vítězové ročníku 2026", typ:"archiv" }
+  ],
+  poznamka:"Vhodné pro spojení žáků z oborů Počítačová grafika a Vývoj aplikací — kategorie Junior Design a Junior Digitálna inovácia se dobře doplňují.",
+  overeno:"15. 9. 2026"
+},
+{
+  id:"soc-49-rocnik",
+  nazev:"Středoškolská odborná činnost (SOČ) – 49. ročník",
+  poradatel:"NPI ČR, garance MŠMT",
+  kategorie:"digital", rok:"2026/2027", stav:"otevreno",
+  uzaverka:"2027-03-15", terminPoznamka:"školní kola v březnu 2027, přesný termín stanoví škola",
+  vek:"žáci středních škol", misto:"školní, krajská a celostátní kola", poplatek:"zdarma", tymova:false,
+  strucne:"Celostátní přehlídka odborných prací. Pro grafiky a programátory jsou klíčové obory 18, 16 a 15.",
+  pravidla:[
+    "Obor 18 – Informatika: původní softwarové produkty, mobilní aplikace, webové platformy, herní enginy či interaktivní počítačová grafika.",
+    "Obor 16 – Tvorba učebních pomůcek a didaktická technologie: interaktivní edukační nástroje.",
+    "Obor 15 – Teorie kultury, umění a umělecké tvorby: teoreticko-praktické výtvarné soubory.",
+    "Práce musí kombinovat funkční výstup s teoretickým spisem zahrnujícím rešerši, analýzu konkurence a uživatelské testování."
+  ],
+  terminy:[
+    { datum:"březen 2027", co:"Školní obhajoby", klic:true },
+    { datum:"duben 2027", co:"Krajská kola" },
+    { datum:"červen 2027", co:"Celostátní finále" }
+  ],
+  porota:"Oborové poroty složené z vysokoškolských pedagogů a odborníků z praxe.",
+  vyhlaseni:"Postupně po jednotlivých kolech, celostátní finále v červnu 2027.",
+  odevzdani:"Přihláška a nahrání práce přes informační systém SOČ; následuje ústní obhajoba.",
+  odkazy:[
+    { url:"https://www.soc.cz/obor-18-informatika/", text:"Obor 18 – Informatika", typ:"pravidla" },
+    { url:"https://www.soc.cz/obory-soc/", text:"Přehled všech oborů SOČ", typ:"info" },
+    { url:"https://www.spse.cz/clanky/souteze/2026-postup-do-narodniho-finale-soc-krajske-kolo-chrudim", text:"Naši žáci v krajském kole 2026", typ:"skola" }
+  ],
+  poznamka:"Úspěch v celostátním kole otevírá dveře k přednostnímu přijetí na přední české technické a informatické vysoké školy.",
+  overeno:"15. 9. 2026"
+},
+{
+  id:"global-game-jam-2027",
+  nazev:"Global Game Jam 2027",
+  poradatel:"Global Game Jam, lokální jam sites",
+  kategorie:"digital", rok:"2026/2027", stav:"otevreno",
+  uzaverka:"2027-01-22", terminPoznamka:"akce probíhá 22.–24. 1. 2027, registrace se otevírá v prosinci",
+  vek:"bez omezení, u nezletilých ověřte podmínky jam site", misto:"Praha, Brno, Ostrava nebo online", poplatek:"obvykle zdarma nebo symbolický", tymova:true,
+  strucne:"Osmačtyřicetihodinový maraton, během něhož tým vytvoří hratelný prototyp hry na globálně vyhlášené téma.",
+  pravidla:[
+    "Téma je vyhlášeno až na začátku akce, všechny týmy pracují se stejným zadáním.",
+    "Během 48 hodin vzniká kompletní hratelný prototyp.",
+    "Účastnit se lze na fyzických jam sites nebo plně online."
+  ],
+  terminy:[
+    { datum:"22.–24. 1. 2027", co:"Průběh akce", klic:true }
+  ],
+  porota:"Jde spíše o tvůrčí přehlídku než klasickou soutěž; hodnocení je na jednotlivých jam sites.",
+  vyhlaseni:"Prezentace hotových prototypů na konci akce.",
+  odevzdani:"Nahrání prototypu na platformu Global Game Jam během akce.",
+  odkazy:[
+    { url:"https://www.pocketgamer.biz/events/global-game-jam-2027/", text:"Informace o termínu ročníku 2027", typ:"info" }
+  ],
+  poznamka:"Konkrétní česká místa konání a podmínky účasti nezletilých je nutné ověřit u jednotlivých jam sites, obvykle v prosinci 2026.",
+  overeno:"15. 9. 2026"
+},
+{
+  id:"mame-radi-prirodu-2027",
+  nazev:"Máme rádi přírodu",
+  poradatel:"Hnutí Brontosaurus",
+  kategorie:"vytvarna", rok:"2026/2027", stav:"ocekava",
+  uzaverka:"2027-04-15", terminPoznamka:"nové téma a přesný termín pro rok 2027 zatím nebyly zveřejněny",
+  vek:"4–19 let", misto:"Brno – Otevřená zahrada", poplatek:"zdarma", tymova:false,
+  strucne:"Celostátní přehlídka o vztahu člověka k životnímu prostředí — plošná tvorba, fotografie, video i text.",
+  pravidla:[
+    "Kategorie plošné výtvarné tvorby přijímá formáty A4 až A0; prostorové objekty jsou vyloučeny.",
+    "Videa mohou mít délku do 2 minut.",
+    "Výtvarné práce se odesílají fyzicky, audiovizuální a fotografické záznamy se nahrávají online."
+  ],
+  terminy:[
+    { datum:"duben 2027", co:"Předpokládaná uzávěrka", klic:true },
+    { datum:"červen 2027", co:"Slavnostní ceremoniál v Otevřené zahradě v Brně" }
+  ],
+  porota:"Porota Hnutí Brontosaurus složená z výtvarníků a environmentálních pedagogů.",
+  vyhlaseni:"V červnu 2027 v Brně. Vybraná díla jsou vystavována v Praze v Toulcově dvoře a v Křížové chodbě Nové radnice v Brně.",
+  odevzdani:"Kombinace fyzického zaslání (výtvarné práce) a online nahrání (foto, video).",
+  odkazy:[
+    { url:"https://www.spse.cz/clanky/souteze/2026-andrea-malkova-ze-tretiho-rocniku-grafickeho-oboru-ziskala-treti-misto-vcelostatni-vytvarne", text:"Andrea Málková získala 3. místo v ročníku 2026", typ:"skola" }
+  ],
+  poznamka:"Soutěž, kde už naše škola uspěla — v roce 2026 obsadila Andrea Málková ze 3. ročníku grafiky třetí místo v celostátním kole.",
+  overeno:"15. 9. 2026"
+},
+{
+  id:"svet-bez-ucitelu-2026",
+  nazev:"Svět bez učitelů",
+  poradatel:"Pedagogická komora",
+  kategorie:"vytvarna", rok:"2026/2027", stav:"otevreno",
+  uzaverka:"2026-11-11", terminPoznamka:"",
+  vek:"žáci ZŠ, ZUŠ a SŠ z ČR a SR, individuálně i kolektivně", misto:"Praha – Národní technická knihovna",
+  poplatek:"zdarma", tymova:true,
+  strucne:"Nová soutěž s otevřeným médiem — obraz, kresba, komiks, volná tvorba, krátký film i animace.",
+  pravidla:[
+    "Přijímá se obraz, kresba, komiks, volná tvorba, krátký film nebo animace.",
+    "Soutěžit lze individuálně i v kolektivu.",
+    "Práce přihlašuje škola prostřednictvím pedagoga."
+  ],
+  terminy:[
+    { datum:"11. 11. 2026", co:"Uzávěrka přihlášek", klic:true }
+  ],
+  porota:"Porota Pedagogické komory.",
+  vyhlaseni:"Vítězné práce budou vystaveny v Národní technické knihovně v Praze.",
+  odevzdani:"Přihlašuje škola prostřednictvím pedagoga.",
+  odkazy:[],
+  poznamka:"Široké spektrum médií a čeština jako jednací jazyk — vhodná první soutěž pro žáky, kteří ještě nikde nesoutěžili. Odkaz na propozice je potřeba doplnit.",
+  overeno:"15. 9. 2026"
+},
+{
+  id:"fzu-fotograficka-soutez-2026",
+  nazev:"Fotografická soutěž Fyzikálního ústavu AV ČR",
+  poradatel:"Fyzikální ústav Akademie věd ČR",
+  kategorie:"foto", rok:"2026/2027", stav:"otevreno",
+  uzaverka:"2026-09-30", terminPoznamka:"",
+  vek:"studenti českých středních škol", misto:"Praha", poplatek:"zdarma", tymova:false,
+  strucne:"Fotografie související s fyzikou, vědou nebo světem kolem nás.",
+  pravidla:[
+    "Soutěž je určena studentům českých středních škol.",
+    "Fotografie se musí vztahovat k fyzice, vědě nebo přírodním jevům kolem nás.",
+    "Soutěž je rozdělena do kategorií; kategorie B má uzávěrku 30. 9. 2026."
+  ],
+  terminy:[
+    { datum:"30. 9. 2026", co:"Uzávěrka kategorie B", klic:true }
+  ],
+  porota:"Porota složená z fyziků a fotografů.",
+  vyhlaseni:"Oznámí pořadatel; vybrané snímky bývají vystaveny v prostorách ústavu.",
+  odevzdani:"Elektronicky přes formulář pořadatele.",
+  odkazy:[],
+  poznamka:"Velmi blízká uzávěrka. Odkaz na oficiální propozice je potřeba doplnit.",
+  overeno:"15. 9. 2026"
+},
+
+/* ── MEZINÁRODNÍ SOUTĚŽE ──────────────────────────────────────────── */
+{
+  id:"mdvv-lidice-55",
+  nazev:"55. MDVV Lidice 2027 – téma „Prázdniny“",
+  poradatel:"Památník Lidice",
+  kategorie:"vytvarna", rok:"2026/2027", stav:"otevreno",
+  uzaverka:"2027-02-05", terminPoznamka:"elektronická registrace do 5. 2. 2027, doručení fyzických prací do 12. 2. 2027",
+  vek:"4–16 let", misto:"Lidice", poplatek:"zdarma", tymova:false,
+  strucne:"Jedna z nejvýznamnějších světových přehlídek dětského a mládežnického umění, založená k uctění památky dětských obětí války.",
+  pravidla:[
+    "Ústřední téma 55. ročníku zní PRÁZDNINY (Holidays).",
+    "Věkový limit je 4 až 16 let — pro nás tedy první a druhé ročníky.",
+    "Přijímá se široké spektrum disciplín: kresba, malba, grafika, fotografie, prostorové objekty i autorská animace.",
+    "Porota hodnotí především autenticitu dětského a mladistvého vidění světa."
+  ],
+  terminy:[
+    { datum:"5. 2. 2027", co:"Uzávěrka elektronické registrace", klic:true },
+    { datum:"12. 2. 2027", co:"Doručení fyzických prací do Památníku Lidice", klic:true },
+    { datum:"jaro 2027", co:"Výstava a předávání cen" }
+  ],
+  porota:"Mezinárodní odborná porota; udělují se medaile Lidická růže a čestná uznání.",
+  vyhlaseni:"Slavnostní předávání cen v Lidicích na jaře 2027, následuje výstava.",
+  odevzdani:"Po předchozí elektronické registraci se fyzická díla doručují do Památníku Lidice.",
+  odkazy:[
+    { url:"https://www.mdvv-lidice.cz/aktualni/ceny/", text:"Předávání cen a informace k ročníku", typ:"pravidla" },
+    { url:"https://mzv.gov.cz/saopaulo/cz/kultura_krajane_a_skolstvi/vyhlaseni_tematu_54_rocniku_mezinarodni.html", text:"Ukázka vyhlášení tématu minulého ročníku", typ:"archiv" }
+  ],
+  poznamka:"Věkový limit 16 let omezuje účast na nejmladší ročníky. Termíny se v různých zdrojích mírně liší (5. 2. registrace, 12. 2. doručení) — před odesláním ověřte na webu Památníku.",
+  overeno:"15. 9. 2026"
+},
+{
+  id:"silent-manga-audition-sma25",
+  nazev:"Silent Manga Audition – SMA25 „A Kind Heart“",
+  poradatel:"Coamix Inc., Tokio",
+  kategorie:"komiks", rok:"2026/2027", stav:"otevreno",
+  uzaverka:"2027-03-31", terminPoznamka:"jarní kolo; některé zdroje uvádějí dřívější uzávěrku 15. 1. 2027 — ověřte na webu",
+  vek:"bez omezení věku i země", misto:"online, mezinárodní", poplatek:"zdarma", tymova:false,
+  strucne:"Manga vyprávěná zcela beze slov — příběh musí unést kompozice, mimika a vizuální rytmus.",
+  pravidla:[
+    "V soutěžní práci nesmí být žádné psané dialogy.",
+    "Rozsah je do 17 stran; příběh se vypráví výhradně obrazovou kompozicí, mimikou postav a vizuálním rytmem.",
+    "Povolena jsou pouze zvukomalebná citoslovce.",
+    "Přihlášení je zdarma a otevřené autorům ze všech zemí."
+  ],
+  terminy:[
+    { datum:"31. 3. 2027", co:"Uzávěrka jarního kola SMA25", klic:true }
+  ],
+  porota:"Redaktoři a autoři nakladatelství Coamix.",
+  vyhlaseni:"Výsledky zveřejňuje pořadatel na webu soutěže. Nejlepší práce získávají finanční ocenění a pozvánku do stipendijního programu SMA MasterClass v Tokiu.",
+  odevzdani:"Online nahrání stránek přes portál soutěže.",
+  odkazy:[
+    { url:"https://www.manga-audition.com/sma25-a-kind-heart/", text:"Zadání aktuální výzvy SMA25", typ:"pravidla" },
+    { url:"https://www.manga-audition.com/rules-guidelines/", text:"Pravidla a technické požadavky", typ:"pravidla" }
+  ],
+  poznamka:"Ideální pro žáky, kteří kreslí komiks, ale nechtějí se trápit s překladem do angličtiny — soutěž je z principu beze slov.",
+  overeno:"15. 9. 2026"
+},
+{
+  id:"fumetto-2027",
+  nazev:"Fumetto International Comic Competition 2027 – téma „Blubb“",
+  poradatel:"Fumetto International Comix Festival, Luzern",
+  kategorie:"komiks", rok:"2026/2027", stav:"otevreno",
+  uzaverka:"2026-12-01", terminPoznamka:"",
+  vek:"bez omezení věku", misto:"Lucern, Švýcarsko", poplatek:"ověřte v propozicích", tymova:false,
+  strucne:"Mezinárodní komiksová soutěž s otevřeným výkladem tématu — vhodná i pro experimentální obrazový příběh.",
+  pravidla:[
+    "Přihlašuje se jeden komiks nebo obrazový příběh na téma „Blubb“.",
+    "Soutěž je otevřena bez omezení věku, přijímá kresbu, digitální tvorbu i experimentální přístupy."
+  ],
+  terminy:[
+    { datum:"1. 12. 2026", co:"Uzávěrka přihlášek", klic:true }
+  ],
+  porota:"Mezinárodní porota festivalu Fumetto.",
+  vyhlaseni:"V rámci festivalu Fumetto v Lucernu na jaře 2027.",
+  odevzdani:"Podle propozic pořadatele; ověřte na oficiálním webu festivalu.",
+  odkazy:[],
+  poznamka:"Odkaz na oficiální propozice je potřeba doplnit.",
+  overeno:"15. 9. 2026"
+},
+{
+  id:"sony-world-photography-youth-2027",
+  nazev:"Sony World Photography Awards – Youth",
+  poradatel:"World Photography Organisation",
+  kategorie:"foto", rok:"2026/2027", stav:"otevreno",
+  uzaverka:"2027-01-05", terminPoznamka:"ročník 2027 je potřeba potvrdit u pořadatele",
+  vek:"fotografové do 19 let", misto:"Londýn / online", poplatek:"zdarma", tymova:false,
+  strucne:"Silná mezinárodní fotografická soutěž bez poplatku — hodnotí se nejlepší jednotlivý snímek.",
+  pravidla:[
+    "Kategorie Youth je určena fotografům do 19 let.",
+    "Soutěží se nejlepším jednotlivým snímkem, téma bývá volné nebo rámcově zadané.",
+    "Přihlášení je bezplatné."
+  ],
+  terminy:[
+    { datum:"5. 1. 2027", co:"Předpokládaná uzávěrka", klic:true }
+  ],
+  porota:"Mezinárodní porota World Photography Organisation.",
+  vyhlaseni:"Na jaře 2027 v Londýně, vítězné snímky bývají vystaveny v Somerset House.",
+  odevzdani:"Online nahrání snímků přes portál soutěže.",
+  odkazy:[],
+  poznamka:"Ročník 2027 nebyl k 15. 9. 2026 oficiálně potvrzen. Odkaz na oficiální web je potřeba doplnit.",
+  overeno:"15. 9. 2026"
+},
+{
+  id:"science-without-borders-2027",
+  nazev:"Science Without Borders Challenge 2027 – „Navigate with Care“",
+  poradatel:"Khaled bin Sultan Living Oceans Foundation",
+  kategorie:"vytvarna", rok:"2026/2027", stav:"otevreno",
+  uzaverka:"2027-03-01", terminPoznamka:"",
+  vek:"studenti 11–19 let z celého světa", misto:"online, mezinárodní", poplatek:"zdarma", tymova:false,
+  strucne:"Tradiční dvourozměrná výtvarná práce na téma ochrany oceánů, s finančními cenami pro vítěze.",
+  pravidla:[
+    "Přijímá se tradiční dvourozměrná výtvarná práce — malba, kresba, koláž.",
+    "Digitální umění a fotografie zpravidla nejsou přijímány; před odesláním si ověřte aktuální znění pravidel.",
+    "Téma ročníku zní „Navigate with Care“."
+  ],
+  terminy:[
+    { datum:"1. 3. 2027", co:"Uzávěrka přihlášek", klic:true }
+  ],
+  porota:"Mezinárodní porota nadace.",
+  vyhlaseni:"Výsledky zveřejňuje pořadatel na svém webu; hlavní cena dosahuje několika set USD.",
+  odevzdani:"Online nahrání fotografie díla přes portál nadace.",
+  odkazy:[],
+  poznamka:"Pozor na omezení technik — soutěž cílí na klasickou malbu a kresbu. Odkaz na oficiální web je potřeba doplnit.",
+  overeno:"15. 9. 2026"
+},
+{
+  id:"earth-partner-prize-2026",
+  nazev:"Earth Partner Prize 2026",
+  poradatel:"Earth Partner Prize",
+  kategorie:"vytvarna", rok:"2026/2027", stav:"otevreno",
+  uzaverka:"2026-10-07", terminPoznamka:"",
+  vek:"14–30 let, celosvětově", misto:"online, mezinárodní", poplatek:"zdarma", tymova:false,
+  strucne:"Mimořádně široce pojatá soutěž na ekologická témata — od kresby po aplikace a nová média.",
+  pravidla:[
+    "Přijímá se kresba, malba, fotografie, film, móda, performance, digitální nástroje, aplikace i nová média.",
+    "Společným jmenovatelem je ekologické téma.",
+    "Účast je zdarma a soutěž nabízí finanční ceny."
+  ],
+  terminy:[
+    { datum:"7. 10. 2026", co:"Uzávěrka přihlášek", klic:true }
+  ],
+  porota:"Mezinárodní porota pořadatele.",
+  vyhlaseni:"Oznámí pořadatel po uzávěrce.",
+  odevzdani:"Online přihláškou.",
+  odkazy:[],
+  poznamka:"Krátká doba do uzávěrky, ale mimořádně volný výběr média — využitelné pro práce, které už vznikly ve výuce. Odkaz je potřeba doplnit.",
+  overeno:"15. 9. 2026"
+},
+{
+  id:"icaw-poster-2027",
+  nazev:"ICAW Poster Contest 2027 – „All Paths Lead to Compost“",
+  poradatel:"International Compost Awareness Week",
+  kategorie:"grafika", rok:"2026/2027", stav:"otevreno",
+  uzaverka:"2026-10-22", terminPoznamka:"oficiální web uvádí 22. 10., některé zdroje 15. 10. — ověřte",
+  vek:"od 14 let, celosvětově", misto:"online, mezinárodní", poplatek:"zdarma", tymova:false,
+  strucne:"Plakátová soutěž na téma kompostování — vděčné zadání pro grafický design i ilustraci.",
+  pravidla:[
+    "Vytváří se plakát na téma „All Paths Lead to Compost“.",
+    "Přijímá se ruční ilustrace i digitální zpracování.",
+    "Soutěž je otevřena autorům od 14 let z celého světa."
+  ],
+  terminy:[
+    { datum:"22. 10. 2026", co:"Uzávěrka přihlášek", klic:true }
+  ],
+  porota:"Porota pořadatele ICAW.",
+  vyhlaseni:"Vítězný plakát se stává oficiálním plakátem kampaně ICAW 2027.",
+  odevzdani:"Online nahrání tiskových dat plakátu.",
+  odkazy:[],
+  poznamka:"Termíny se v různých zdrojích liší. Odkaz na oficiální web je potřeba doplnit.",
+  overeno:"15. 9. 2026"
+},
+{
+  id:"conrad-challenge-2027",
+  nazev:"Conrad Challenge 2026/2027",
+  poradatel:"Conrad Foundation",
+  kategorie:"digital", rok:"2026/2027", stav:"otevreno",
+  uzaverka:"2026-10-30", terminPoznamka:"první fáze do 30. 10. 2026, druhá uzávěrka 7. 1. 2027",
+  vek:"mezinárodní týmy studentů 13–18 let", misto:"online, finále v USA", poplatek:"může být zpoplatněno", tymova:true,
+  strucne:"Týmová inovační soutěž — návrh aplikace, digitální služby, prototypu a prezentačního videa.",
+  pravidla:[
+    "Soutěží mezinárodní týmy studentů ve věku 13–18 let.",
+    "V první fázi (Innovation Stage) stačí rozpracovaný projekt s popisem inovace.",
+    "Ve druhé fázi se dokládá dokumentace inovace, prototyp, obchodní model a video."
+  ],
+  terminy:[
+    { datum:"30. 10. 2026", co:"Uzávěrka první fáze", klic:true },
+    { datum:"7. 1. 2027", co:"Uzávěrka Innovation Stage pro postupující týmy" },
+    { datum:"jaro 2027", co:"Finále" }
+  ],
+  porota:"Porota složená z podnikatelů, inženýrů a investorů.",
+  vyhlaseni:"Ve finále na jaře 2027.",
+  odevzdani:"Online přes portál soutěže.",
+  odkazy:[],
+  poznamka:"Soutěž může mít registrační poplatky — ověřte před přihlášením. Odkaz na oficiální web je potřeba doplnit.",
+  overeno:"15. 9. 2026"
+},
+{
+  id:"fgce-student-design-2027",
+  nazev:"FGCE Student Design Contests",
+  poradatel:"The Foundation for Graphic Communication Education (USA)",
+  kategorie:"grafika", rok:"2026/2027", stav:"otevreno",
+  uzaverka:"2027-03-15", terminPoznamka:"digitální uzávěrka tiskových dat v polovině března 2027",
+  vek:"studenti středních škol z celého světa", misto:"online, USA", poplatek:"zdarma", tymova:false,
+  strucne:"Soutěže v tiskovém designu: plakát, tričko, krabice a samolepka — vše připravené pro reálný tisk.",
+  pravidla:[
+    "Kategorie: Poster Design, T-Shirt Design, Box Design a Sticker Design.",
+    "Návrhy se odevzdávají jako tisková data v barevném prostoru CMYK.",
+    "Soutěž je otevřena studentům středních škol po celém světě."
+  ],
+  terminy:[
+    { datum:"polovina března 2027", co:"Digitální uzávěrka tiskových dat", klic:true }
+  ],
+  porota:"Porota složená z odborníků na tiskovou produkci.",
+  vyhlaseni:"Oznámí pořadatel; součástí jsou stipendia a granty.",
+  odevzdani:"Online nahrání tiskových dat.",
+  odkazy:[
+    { url:"https://www.thefgce.org/dscoop-the-foundation-for-graphic-communication-education-announce-new-grant-program/", text:"Informace o programu FGCE", typ:"info" }
+  ],
+  poznamka:"Dobrý trénink přípravy dat pro tisk — porota hodnotí i technickou správnost výstupu.",
+  overeno:"15. 9. 2026"
+},
+{
+  id:"ux-design-awards-spring-2027",
+  nazev:"UX Design Awards – Spring 2027",
+  poradatel:"International Design Center Berlin",
+  kategorie:"digital", rok:"2026/2027", stav:"otevreno",
+  uzaverka:"2026-11-15", terminPoznamka:"",
+  vek:"především hotové či pokročilé projekty", misto:"Berlín / online", poplatek:"zpoplatněno", tymova:true,
+  strucne:"Mezinárodní ocenění pro UX/UI, digitální produkty, služby, aplikace a weby.",
+  pravidla:[
+    "Přihlašují se hotové nebo pokročile rozpracované digitální produkty, služby, aplikace nebo weby.",
+    "Hodnotí se celý designérský proces včetně uživatelského výzkumu a přístupnosti."
+  ],
+  terminy:[
+    { datum:"15. 11. 2026", co:"Uzávěrka přihlášek", klic:true }
+  ],
+  porota:"Mezinárodní porota UX odborníků.",
+  vyhlaseni:"Na jaře 2027.",
+  odevzdani:"Online přihláška s dokumentací projektu.",
+  odkazy:[],
+  poznamka:"Formálně náročná soutěž. Před přípravou ověřte vhodnou kategorii a způsob zapojení středoškolského týmu i výši poplatku. Odkaz je potřeba doplnit.",
+  overeno:"15. 9. 2026"
+},
+{
+  id:"if-design-student-award-2027",
+  nazev:"iF Design Student Award 2027",
+  poradatel:"iF International Forum Design",
+  kategorie:"grafika", rok:"2026/2027", stav:"otevreno",
+  uzaverka:"2027-02-03", terminPoznamka:"",
+  vek:"studenti a čerství absolventi", misto:"online, mezinárodní", poplatek:"zdarma pro studenty", tymova:true,
+  strucne:"Produkt, komunikace, UX/UI, služby, sociální a udržitelný design v jedné mezinárodní přehlídce.",
+  pravidla:[
+    "Soutěž je otevřena studentům a čerstvým absolventům, orientuje se však především na vysokoškolské studium.",
+    "Přihlašují se projekty v kategoriích produkt, komunikace, UX/UI, služby, sociální a udržitelný design."
+  ],
+  terminy:[
+    { datum:"3. 2. 2027", co:"Uzávěrka přihlášek", klic:true }
+  ],
+  porota:"Mezinárodní porota iF.",
+  vyhlaseni:"Na jaře 2027.",
+  odevzdani:"Online přihláška s dokumentací projektu.",
+  odkazy:[],
+  poznamka:"Středoškolák musí předem ověřit svou způsobilost k účasti. Odkaz je potřeba doplnit.",
+  overeno:"15. 9. 2026"
+},
+{
+  id:"a-design-award-2027",
+  nazev:"A’ Design Award 2026/2027",
+  poradatel:"A’ Design Award & Competition",
+  kategorie:"grafika", rok:"2026/2027", stav:"otevreno",
+  uzaverka:"2027-02-28", terminPoznamka:"",
+  vek:"začínající i profesionální tvůrci", misto:"Como, Itálie / online", poplatek:"vysoké poplatky", tymova:true,
+  strucne:"Velmi široká mezinárodní přehlídka: grafika, digitální design, web, aplikace, produkt, obal, móda i fotografie.",
+  pravidla:[
+    "Přihlašují se práce v desítkách kategorií od grafiky po produktový design.",
+    "Soutěž je otevřena začínajícím i profesionálním tvůrcům."
+  ],
+  terminy:[
+    { datum:"28. 2. 2027", co:"Uzávěrka přihlášek", klic:true }
+  ],
+  porota:"Mezinárodní porota A’ Design Award.",
+  vyhlaseni:"Na jaře 2027, součástí je gala v Itálii.",
+  odevzdani:"Online přihláška.",
+  odkazy:[],
+  poznamka:"Registrační a nominační poplatky mohou být vysoké. Doporučujeme pouze pro mimořádně propracované práce a po domluvě s vedením školy.",
+  overeno:"15. 9. 2026"
+},
+{
+  id:"anima-brussels-2027",
+  nazev:"Anima Brussels 2027 – International Student Films",
+  poradatel:"Anima – Brussels Animation Film Festival",
+  kategorie:"film", rok:"2026/2027", stav:"otevreno",
+  uzaverka:"2026-10-02", terminPoznamka:"",
+  vek:"studentské filmy vytvořené po červnu 2025", misto:"Brusel, Belgie", poplatek:"zdarma", tymova:true,
+  strucne:"Mezinárodní přehlídka studentských animovaných filmů včetně experimentální a VR animace.",
+  pravidla:[
+    "Přijímají se studentské animované filmy vytvořené po červnu 2025.",
+    "Zahrnuta je i experimentální a VR animace.",
+    "Přihlášení je zdarma."
+  ],
+  terminy:[
+    { datum:"2. 10. 2026", co:"Uzávěrka přihlášek", klic:true }
+  ],
+  porota:"Mezinárodní porota festivalu Anima.",
+  vyhlaseni:"V rámci festivalu v Bruselu na jaře 2027.",
+  odevzdani:"Online přihláškou přes festivalový portál.",
+  odkazy:[],
+  poznamka:"Před přihlášením ověřte, zda středoškolská produkce splňuje festivalovou definici studentského filmu. Odkaz je potřeba doplnit.",
+  overeno:"15. 9. 2026"
+},
+{
+  id:"camera-zizanio-2026",
+  nazev:"Camera Zizanio 2026",
+  poradatel:"Camera Zizanio, Řecko",
+  kategorie:"film", rok:"2026/2027", stav:"otevreno",
+  uzaverka:"2026-09-16", terminPoznamka:"",
+  vek:"mladí autoři přibližně 4–20 let", misto:"Pyrgos, Řecko", poplatek:"zdarma", tymova:true,
+  strucne:"Mezinárodní přehlídka filmů mladých autorů — hraný film, dokument i animace.",
+  pravidla:[
+    "Přijímá se hraný film, dokument i animace od mladých autorů.",
+    "Festival je mezinárodní a přihlášení je bezplatné."
+  ],
+  terminy:[
+    { datum:"16. 9. 2026", co:"Uzávěrka přihlášek", klic:true },
+    { datum:"prosinec 2026", co:"Konání festivalu v Řecku" }
+  ],
+  porota:"Mezinárodní porota festivalu.",
+  vyhlaseni:"V rámci festivalu v prosinci 2026 v Řecku.",
+  odevzdani:"Online přihláškou.",
+  odkazy:[],
+  poznamka:"Uzávěrka je bezprostřední — reálně jen pro film, který už je hotový. Odkaz je potřeba doplnit.",
+  overeno:"15. 9. 2026"
+},
+{
+  id:"nkba-student-design-2027",
+  nazev:"NKBA Student Design Competition 2026/2027",
+  poradatel:"National Kitchen & Bath Association (USA)",
+  kategorie:"obal", rok:"2026/2027", stav:"otevreno",
+  uzaverka:"2027-06-04", terminPoznamka:"",
+  vek:"studenti se studentským členstvím NKBA", misto:"USA / online", poplatek:"soutěžní vstup je zpoplatněn", tymova:false,
+  strucne:"Návrh kuchyně nebo koupelny včetně interiéru a 3D vizualizace.",
+  pravidla:[
+    "Soutěží se návrhem kuchyně nebo koupelny včetně interiérového řešení a 3D vizualizace.",
+    "Podmínkou účasti je studentské členství NKBA."
+  ],
+  terminy:[
+    { datum:"4. 6. 2027", co:"Uzávěrka přihlášek", klic:true }
+  ],
+  porota:"Porota NKBA složená z interiérových designérů.",
+  vyhlaseni:"Oznámí pořadatel po uzávěrce.",
+  odevzdani:"Online přihláška s výkresovou a vizualizační dokumentací.",
+  odkazy:[],
+  poznamka:"Vhodná spíše pro pokročilé zájemce o interiérový design; může být nutné členství i poplatek. Odkaz je potřeba doplnit.",
+  overeno:"15. 9. 2026"
+},
+
+/* ── ARCHIV: PROBĚHLÉ ROČNÍKY ─────────────────────────────────────── */
+{
+  id:"mame-radi-prirodu-2026-archiv",
+  nazev:"Máme rádi přírodu 2026",
+  poradatel:"Hnutí Brontosaurus",
+  kategorie:"vytvarna", rok:"2025/2026", stav:"archiv",
+  uzaverka:"2026-04-15", terminPoznamka:"",
+  vek:"4–19 let", misto:"Brno – Otevřená zahrada", poplatek:"zdarma", tymova:false,
+  strucne:"Ročník, ve kterém naše žákyně Andrea Málková obsadila 3. místo v celostátním kole.",
+  pravidla:["Plošná výtvarná tvorba ve formátech A4 až A0, fotografie, video do 2 minut a literární text."],
+  terminy:[
+    { datum:"duben 2026", co:"Uzávěrka" },
+    { datum:"červen 2026", co:"Slavnostní ceremoniál v Brně" }
+  ],
+  porota:"Porota Hnutí Brontosaurus.",
+  vyhlaseni:"Červen 2026, Otevřená zahrada Brno.",
+  odevzdani:"Fyzicky (výtvarné práce) a online (foto, video).",
+  odkazy:[
+    { url:"https://www.spse.cz/clanky/souteze/2026-andrea-malkova-ze-tretiho-rocniku-grafickeho-oboru-ziskala-treti-misto-vcelostatni-vytvarne", text:"Náš článek o 3. místě Andrey Málkové", typ:"skola" }
+  ],
+  poznamka:"Uchováváme jako doklad, že tahle soutěž je pro naše žáky reálně dosažitelná.",
+  overeno:"15. 9. 2026"
+},
+{
+  id:"best-in-design-2026-archiv",
+  nazev:"Best in Design 2026",
+  poradatel:"Zlin Design Week, UTB ve Zlíně",
+  kategorie:"grafika", rok:"2025/2026", stav:"archiv",
+  uzaverka:"2026-02-05", terminPoznamka:"",
+  vek:"do 30 let", misto:"Zlín", poplatek:"zdarma", tymova:false,
+  strucne:"Sedmnáctý ročník mezinárodní designérské soutěže; absolutní vítězkou se stala Oliwia Śnieg.",
+  pravidla:["Kategorie Communication Design, Product & Industrial Design, Fashion Design a Service Design."],
+  terminy:[
+    { datum:"1. 12. 2025", co:"Otevření přihlášek" },
+    { datum:"únor 2026", co:"Uzávěrka" },
+    { datum:"květen 2026", co:"Vyhlášení vítězů" }
+  ],
+  porota:"Mezinárodní porota festivalu.",
+  vyhlaseni:"Květen 2026, Zlín.",
+  odevzdani:"Digitálně přes registrační formulář.",
+  odkazy:[
+    { url:"https://zlindesignweek.com/2026/2026/05/13/absolutni-vitezkou-best-in-design-2026-se-stala-oliwia-snieg-s-projektem-zamerenym-na-ochranu-vod/", text:"Absolutní vítězka ročníku 2026", typ:"archiv" },
+    { url:"https://zlindesignweek.com/2026/2026/04/10/best-in-design-2026-predstavujeme-letosni-finalisty/", text:"Finalisté ročníku 2026", typ:"archiv" },
+    { url:"https://zlindesignweek.com/2026/2025/12/01/zazari-ve-svete-designu-mezinarodni-soutez-best-in-design-otevira-prihlasky-do-17-rocniku/", text:"Vyhlášení 17. ročníku", typ:"archiv" }
+  ],
+  poznamka:"Užitečné jako ukázka úrovně vítězných prací před přípravou na ročník 2027.",
+  overeno:"15. 9. 2026"
+},
+{
+  id:"animag-2026-archiv",
+  nazev:"ANIMÁG Kroměříž 2026 – jubilejní 10. ročník",
+  poradatel:"VOŠ pedagogická a sociální a SPgŠ Kroměříž",
+  kategorie:"film", rok:"2025/2026", stav:"archiv",
+  uzaverka:"2026-03-31", terminPoznamka:"",
+  vek:"15–19 let", misto:"Kroměříž", poplatek:"zdarma", tymova:true,
+  strucne:"Desátý ročník festivalu autorské animace v odkazu Miloše Macourka.",
+  pravidla:["Stop-motion, ploškový film, loutková tvorba i digitální 2D a 3D animace."],
+  terminy:[
+    { datum:"březen 2026", co:"Uzávěrka" },
+    { datum:"jaro 2026", co:"Projekce a vyhlášení" }
+  ],
+  porota:"Porota animátorů a pedagogů.",
+  vyhlaseni:"Kino Nadsklepí, Kroměříž.",
+  odevzdani:"Digitálně.",
+  odkazy:[
+    { url:"https://www.zkola.cz/animag-kromeriz-2026-se-ohlizi-za-uspechem-aneb-jubilejni-desaty-rocnik-v-magickem-odkazu-milose-macourka/", text:"Ohlédnutí za 10. ročníkem", typ:"archiv" },
+    { url:"https://www.zkola.cz/filmarem-v-lavici-jak-promenit-behem-par-tydnu-skolni-projekt-v-celostatni-uspech-na-soutezi-animag-2026/", text:"Jak vznikl vítězný školní film", typ:"info" }
+  ],
+  poznamka:"",
+  overeno:"15. 9. 2026"
+},
+{
+  id:"czech-photo-junior-2025-archiv",
+  nazev:"Czech Photo Junior 2025",
+  poradatel:"Czech Photo o.p.s.",
+  kategorie:"foto", rok:"2025/2026", stav:"archiv",
+  uzaverka:"2025-10-31", terminPoznamka:"",
+  vek:"středoškolská mládež", misto:"Praha", poplatek:"zdarma", tymova:false,
+  strucne:"Juniorská kategorie Czech Press Photo za rok 2025 se slavnostním vyhlášením v Národním muzeu.",
+  pravidla:["Dokumentární a reportážní fotografie bez syntetické manipulace."],
+  terminy:[{ datum:"říjen 2025", co:"Uzávěrka" },{ datum:"prosinec 2025", co:"Slavnostní vyhlášení" }],
+  porota:"Porota Czech Press Photo.",
+  vyhlaseni:"Nová budova Národního muzea, Praha.",
+  odevzdani:"Online.",
+  odkazy:[
+    { url:"https://www.czechphoto.org/detail-novinky/2717-30/slavnostni-vyhlaseni-czech-photo-junior-2025/", text:"Slavnostní vyhlášení Czech Photo Junior 2025", typ:"archiv" }
+  ],
+  poznamka:"",
+  overeno:"15. 9. 2026"
+},
+{
+  id:"teendesign-2025-archiv",
+  nazev:"TEENDESIGN 2025",
+  poradatel:"Fakulta designu a umění Ladislava Sutnara, ZČU v Plzni",
+  kategorie:"grafika", rok:"2025/2026", stav:"archiv",
+  uzaverka:"2026-01-31", terminPoznamka:"",
+  vek:"1.–3. ročník SŠ", misto:"Plzeň", poplatek:"zdarma", tymova:false,
+  strucne:"Minulý ročník přehlídky středoškolského designu, do kterého dorazil rekordní počet prací.",
+  pravidla:["Hodnocení autorského tandemu student – pedagog ve čtyřech kategoriích."],
+  terminy:[{ datum:"leden 2026", co:"Uzávěrka" },{ datum:"jaro 2026", co:"Vyhlášení a výstava" }],
+  porota:"Pedagogové a odborníci Sutnarky.",
+  vyhlaseni:"Plzeň, jaro 2026.",
+  odevzdani:"Digitálně přes portál ZČU.",
+  odkazy:[
+    { url:"https://www.regionplzen.cz/zpravodajstvi/sutnarka-zna-viteze-teendesignu--do-sout-301710/", text:"Vítězové minulého ročníku", typ:"archiv" },
+    { url:"https://www.fdu.zcu.cz/cs/Admission/BachelorStudies/Teendesign.html", text:"Oficiální stránka soutěže", typ:"info" }
+  ],
+  poznamka:"Projděte si vítězné práce před přípravou přihlášky na ročník 2026.",
+  overeno:"15. 9. 2026"
+},
+{
+  id:"model-young-package-2026-archiv",
+  nazev:"Model Young Package 2026",
+  poradatel:"Model Group",
+  kategorie:"obal", rok:"2025/2026", stav:"archiv",
+  uzaverka:"2026-04-15", terminPoznamka:"",
+  vek:"15–21 let (High School)", misto:"mezinárodní", poplatek:"zdarma", tymova:false,
+  strucne:"Uzavřený ročník světové soutěže v obalovém designu z papíru.",
+  pravidla:["Konstrukce primárně z papíru nebo lepenky, PDF prezentace v 1. kole, fyzický prototyp ve 2. kole."],
+  terminy:[{ datum:"duben 2026", co:"Uzávěrka 1. kola" },{ datum:"květen 2026", co:"Fyzické prototypy finalistů" }],
+  porota:"Mezinárodní porota.",
+  vyhlaseni:"Léto 2026.",
+  odevzdani:"Online a poštou.",
+  odkazy:[
+    { url:"https://www.infodesigners.eu/competitions/model-young-package-2026", text:"Podmínky ročníku 2026", typ:"archiv" },
+    { url:"https://www.modelgroup.com/cz/cs/model-young-package.html", text:"Oficiální stránka soutěže", typ:"info" }
+  ],
+  poznamka:"",
+  overeno:"15. 9. 2026"
+}
+
+];
+
+/* ══════════════════════════════════════════════════════════════════════
+   LOGIKA STRÁNKY — níže už není potřeba nic upravovat
+   ══════════════════════════════════════════════════════════════════════ */
+const AKTUALNI_ROK = "2026/2027";
+const DNES = (() => { const d = new Date(); d.setHours(0,0,0,0); return d; })();
+const MESICE = ["ledna","února","března","dubna","května","června","července",
+                "srpna","září","října","listopadu","prosince"];
+const MESICE_1 = ["Leden","Únor","Březen","Duben","Květen","Červen","Červenec",
+                  "Srpen","Září","Říjen","Listopad","Prosinec"];
+const MESICE_ZKR = ["Led","Úno","Bře","Dub","Kvě","Čvn","Čvc","Srp","Zář","Říj","Lis","Pro"];
+
+const stav = { hledani:"", kategorie:new Set(), skupina:"aktualni", razeni:"termin", mesic:null };
+
+function datum(s){ if(!s) return null; const d = new Date(s + "T00:00:00"); return isNaN(d) ? null : d; }
+function formatDatum(d){ return d.getDate() + ". " + MESICE[d.getMonth()] + " " + d.getFullYear(); }
+function formatKratce(d){ return d.getDate() + ". " + (d.getMonth()+1) + ". " + d.getFullYear(); }
+function dniDo(d){ return Math.round((d - DNES) / 86400000); }
+function sklonujDny(n){
+  if(n === 0) return "dnes je poslední den";
+  if(n === 1) return "zbývá 1 den";
+  if(n >= 2 && n <= 4) return "zbývají " + n + " dny";
+  return "zbývá " + n + " dní";
+}
+function esc(s){ return String(s == null ? "" : s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+
+/* Do které skupiny soutěž patří: aktualni | ocekava | archiv */
+function skupina(s){
+  if(s.stav === "archiv") return "archiv";
+  if(s.stav === "ocekava") return "ocekava";
+  const u = datum(s.uzaverka);
+  if(!u) return "ocekava";
+  if(u < DNES) return "archiv";
+  if(s.rok !== AKTUALNI_ROK) return "archiv";
+  return "aktualni";
+}
+
+function barva(k){ return (KATEGORIE[k] || {}).barva || "var(--grey)"; }
+function nazevKategorie(k){ return (KATEGORIE[k] || {}).nazev || "Ostatní"; }
+
+/* ── Filtrování a řazení ──────────────────────────────────────────── */
+function vyber(){
+  let v = SOUTEZE.filter(s => {
+    if(stav.skupina !== "vse" && skupina(s) !== stav.skupina) return false;
+    if(stav.kategorie.size && !stav.kategorie.has(s.kategorie)) return false;
+    if(stav.mesic !== null){
+      const u = datum(s.uzaverka);
+      if(!u || u.getMonth() !== stav.mesic) return false;
+    }
+    if(stav.hledani){
+      const h = stav.hledani.toLowerCase();
+      const text = [s.nazev, s.poradatel, s.strucne, s.misto, s.vek, nazevKategorie(s.kategorie),
+                    (s.pravidla || []).join(" "), s.poznamka].join(" ").toLowerCase();
+      if(!text.includes(h)) return false;
+    }
+    return true;
+  });
+
+  if(stav.razeni === "nazev"){
+    v.sort((a,b) => a.nazev.localeCompare(b.nazev, "cs"));
+  } else if(stav.razeni === "kategorie"){
+    v.sort((a,b) => nazevKategorie(a.kategorie).localeCompare(nazevKategorie(b.kategorie),"cs")
+                 || a.nazev.localeCompare(b.nazev,"cs"));
+  } else {
+    v.sort((a,b) => {
+      const x = datum(a.uzaverka), y = datum(b.uzaverka);
+      if(!x && !y) return a.nazev.localeCompare(b.nazev,"cs");
+      if(!x) return 1;
+      if(!y) return -1;
+      return stav.skupina === "archiv" ? y - x : x - y;
+    });
+  }
+  return v;
+}
+
+/* ── Vykreslení seznamu ───────────────────────────────────────────── */
+function polozka(s){
+  const u = datum(s.uzaverka);
+  const arch = skupina(s) === "archiv";
+  const ceka = skupina(s) === "ocekava";
+  let dLabel = "Uzávěrka", dDate = "neurčena", dLeft = "", dCls = "tbd";
+
+  if(u){
+    dDate = formatKratce(u);
+    const n = dniDo(u);
+    if(arch){ dLabel = "Proběhlo"; dLeft = "ročník uzavřen"; dCls = "past"; }
+    else if(ceka){ dLabel = "Očekávaná uzávěrka"; dLeft = "termín zatím nepotvrzen"; dCls = "tbd"; }
+    else if(n < 0){ dLabel = "Proběhlo"; dLeft = "ročník uzavřen"; dCls = "past"; }
+    else { dLeft = sklonujDny(n); dCls = n <= 14 ? "soon" : "ok"; }
+  } else {
+    dLabel = "Uzávěrka"; dDate = "zatím nevyhlášena"; dLeft = "sledujte web pořadatele";
+  }
+
+  const tagy = [];
+  tagy.push('<span class="tag cat">' + esc(nazevKategorie(s.kategorie)) + '</span>');
+  if(s.vek) tagy.push('<span class="tag">' + esc(s.vek) + '</span>');
+  if(s.tymova) tagy.push('<span class="tag">týmová i individuální</span>');
+  if(s.poplatek){
+    const zdarma = /zdarma|bezplat/i.test(s.poplatek);
+    tagy.push('<span class="tag ' + (zdarma ? "free" : "fee") + '">' + esc(s.poplatek) + '</span>');
+  }
+  if(s.misto) tagy.push('<span class="tag">' + esc(s.misto) + '</span>');
+
+  const hlavniOdkaz = (s.odkazy || []).find(o => o.typ === "pravidla" || o.typ === "prihlaska");
+
+  const el = document.createElement("article");
+  el.className = "item" + (arch || ceka ? " dim" : "");
+  el.style.setProperty("--c", barva(s.kategorie));
+  el.innerHTML =
+    '<div>' +
+      '<h3>' + (hlavniOdkaz
+          ? '<a href="' + esc(hlavniOdkaz.url) + '" target="_blank" rel="noopener">' + esc(s.nazev) + '</a>'
+          : esc(s.nazev)) + '</h3>' +
+      '<p class="org">' + esc(s.poradatel) + '</p>' +
+      '<p class="desc">' + esc(s.strucne) + '</p>' +
+      '<div class="tags">' + tagy.join("") + '</div>' +
+    '</div>' +
+    '<div class="side">' +
+      '<div class="deadline">' +
+        '<span class="d-label">' + dLabel + '</span>' +
+        '<span class="d-date">' + dDate + '</span>' +
+        '<span class="d-left ' + dCls + '">' + dLeft + '</span>' +
+      '</div>' +
+      '<div class="actions">' +
+        '<button type="button" class="btn" data-id="' + esc(s.id) + '">Pravidla a termíny</button>' +
+        (hlavniOdkaz ? '<a class="btn ghost" href="' + esc(hlavniOdkaz.url) + '" target="_blank" rel="noopener">Web soutěže</a>' : '') +
+      '</div>' +
+    '</div>';
+  el.querySelector("button[data-id]").addEventListener("click", () => otevri(s.id));
+  return el;
+}
+
+function render(){
+  const v = vyber();
+  const list = document.getElementById("list");
+  const prazdno = document.getElementById("empty");
+  list.innerHTML = "";
+  prazdno.hidden = v.length > 0;
+
+  const celkem = SOUTEZE.length;
+  document.getElementById("count").textContent =
+    "Zobrazeno " + v.length + " z " + celkem + " soutěží" +
+    (stav.mesic !== null ? " · filtr měsíce: " + MESICE_1[stav.mesic] : "");
+
+  /* Seskupení podle zvoleného řazení */
+  const skupiny = new Map();
+  v.forEach(s => {
+    let klic = "";
+    if(stav.razeni === "termin"){
+      const u = datum(s.uzaverka);
+      klic = u ? MESICE_1[u.getMonth()] + " " + u.getFullYear() : "Termín zatím nevyhlášen";
+    } else if(stav.razeni === "kategorie"){
+      klic = nazevKategorie(s.kategorie);
+    }
+    if(!skupiny.has(klic)) skupiny.set(klic, []);
+    skupiny.get(klic).push(s);
+  });
+
+  skupiny.forEach((polozky, klic) => {
+    if(klic){
+      const h = document.createElement("div");
+      h.className = "group-head";
+      h.innerHTML = "<h2>" + esc(klic) + "</h2><span>" + polozky.length + "&nbsp;" +
+        (polozky.length === 1 ? "soutěž" : polozky.length < 5 ? "soutěže" : "soutěží") + "</span>";
+      list.appendChild(h);
+    }
+    const box = document.createElement("div");
+    box.className = "list";
+    polozky.forEach(s => box.appendChild(polozka(s)));
+    list.appendChild(box);
+  });
+}
+
+/* ── Detail soutěže ───────────────────────────────────────────────── */
+const dlg = document.getElementById("dlg");
+function otevri(id){
+  const s = SOUTEZE.find(x => x.id === id);
+  if(!s) return;
+  document.getElementById("dlgHead").style.setProperty("--c", barva(s.kategorie));
+  document.getElementById("dlgTitle").textContent = s.nazev;
+  document.getElementById("dlgOrg").textContent =
+    s.poradatel + " · " + nazevKategorie(s.kategorie) + " · školní rok " + s.rok;
+
+  const sekce = [];
+  const u = datum(s.uzaverka);
+  if(u || s.terminPoznamka){
+    sekce.push('<div class="note' + (skupina(s) !== "aktualni" ? " warn" : "") + '">' +
+      (u ? "<b>Uzávěrka " + formatDatum(u) + "</b>" : "<b>Uzávěrka zatím nevyhlášena</b>") +
+      (u && skupina(s) === "aktualni" ? " — " + sklonujDny(dniDo(u)) : "") +
+      (s.terminPoznamka ? "<br>" + esc(s.terminPoznamka) : "") + '</div>');
+  }
+  if(s.pravidla && s.pravidla.length){
+    sekce.push('<div class="dlg-sec"><h3>Zadání a pravidla</h3>' +
+      s.pravidla.map(p => "<p>" + esc(p) + "</p>").join("") + '</div>');
+  }
+  if(s.terminy && s.terminy.length){
+    sekce.push('<div class="dlg-sec"><h3>Termíny</h3><ul class="dates">' +
+      s.terminy.map(t => '<li' + (t.klic ? ' class="key"' : '') + '><b>' + esc(t.datum) + '</b><span>' +
+        esc(t.co) + '</span></li>').join("") + '</ul></div>');
+  }
+  const info = [];
+  if(s.misto) info.push("<p><b>Kde se koná:</b> " + esc(s.misto) + "</p>");
+  if(s.vek) info.push("<p><b>Pro koho:</b> " + esc(s.vek) + "</p>");
+  if(s.poplatek) info.push("<p><b>Poplatek:</b> " + esc(s.poplatek) + "</p>");
+  if(info.length) sekce.push('<div class="dlg-sec"><h3>Místo, účastníci a poplatky</h3>' + info.join("") + '</div>');
+
+  if(s.porota) sekce.push('<div class="dlg-sec"><h3>Porota a hodnocení</h3><p>' + esc(s.porota) + '</p></div>');
+  if(s.vyhlaseni) sekce.push('<div class="dlg-sec"><h3>Vyhlášení výsledků</h3><p>' + esc(s.vyhlaseni) + '</p></div>');
+  if(s.odevzdani) sekce.push('<div class="dlg-sec"><h3>Jak odevzdat práci</h3><p>' + esc(s.odevzdani) + '</p></div>');
+
+  const popisky = { pravidla:"Pravidla a propozice", prihlaska:"Přihláška", archiv:"Minulé ročníky",
+                    info:"Doplňující informace", kontakt:"Kontakt", skola:"Článek na spse.cz" };
+  if(s.odkazy && s.odkazy.length){
+    sekce.push('<div class="dlg-sec"><h3>Odkazy</h3><ul class="linklist">' +
+      s.odkazy.map(o => '<li><span class="kind">' + esc(popisky[o.typ] || "Odkaz") + '</span>' +
+        '<a href="' + esc(o.url) + '"' + (o.url.startsWith("mailto:") ? "" : ' target="_blank" rel="noopener"') + '>' +
+        esc(o.text) + '</a></li>').join("") + '</ul></div>');
+  } else {
+    sekce.push('<div class="dlg-sec"><h3>Odkazy</h3><p class="note warn">Odkaz na oficiální propozice zatím není doplněn. ' +
+      'Pokud jej najdete, pošlete jej prosím na <a href="mailto:spse@spse.cz">spse@spse.cz</a>.</p></div>');
+  }
+
+  if(s.poznamka) sekce.push('<div class="dlg-sec"><h3>Poznámka školy</h3><p>' + esc(s.poznamka) + '</p></div>');
+  sekce.push('<p class="verify">Údaje ověřeny ke dni ' + esc(s.overeno) +
+    '. Před odesláním práce si vždy zkontrolujte aktuální propozice přímo u pořadatele.</p>');
+
+  document.getElementById("dlgBody").innerHTML = sekce.join("");
+  if(typeof dlg.showModal === "function") dlg.showModal(); else dlg.setAttribute("open","");
+}
+document.getElementById("dlgClose").addEventListener("click", () => dlg.close());
+dlg.addEventListener("click", e => { if(e.target === dlg) dlg.close(); });
+
+/* ── Časová osa ───────────────────────────────────────────────────── */
+function casovaOsa(){
+  const tl = document.getElementById("timeline");
+  const mesice = [
+    {m:8,r:2026},{m:9,r:2026},{m:10,r:2026},{m:11,r:2026},
+    {m:0,r:2027},{m:1,r:2027},{m:2,r:2027},{m:3,r:2027},{m:4,r:2027},{m:5,r:2027},{m:6,r:2027}
+  ];
+  tl.innerHTML = "";
+  mesice.forEach(({m,r}) => {
+    const col = document.createElement("button");
+    col.type = "button";
+    col.className = "tl-month" + (m === DNES.getMonth() && r === DNES.getFullYear() ? " now" : "") +
+                    (stav.mesic === m ? " on" : "");
+    col.setAttribute("aria-label", "Zobrazit uzávěrky – " + MESICE_1[m] + " " + r);
+
+    const body = SOUTEZE.filter(s => {
+      if(s.stav === "archiv" || s.rok !== AKTUALNI_ROK) return false;
+      const u = datum(s.uzaverka);
+      return u && u.getMonth() === m && u.getFullYear() === r;
+    });
+
+    const dots = document.createElement("div");
+    dots.className = "tl-dots";
+    body.forEach(s => {
+      const d = document.createElement("button");
+      d.type = "button";
+      d.className = "tl-dot" + (datum(s.uzaverka) < DNES ? " past" : "");
+      d.style.setProperty("--c", barva(s.kategorie));
+      if(s.stav === "ocekava") d.style.opacity = ".45";
+      d.title = s.nazev + " — " + formatKratce(datum(s.uzaverka));
+      d.setAttribute("aria-label", d.title);
+      d.addEventListener("click", e => { e.stopPropagation(); otevri(s.id); });
+      dots.appendChild(d);
+    });
+
+    const lab = document.createElement("span");
+    lab.className = "tl-label";
+    lab.innerHTML = "<b>" + MESICE_ZKR[m] + "</b>" + r;
+
+    if(m === DNES.getMonth() && r === DNES.getFullYear()){
+      const tag = document.createElement("span");
+      tag.className = "tl-now-tag";
+      tag.textContent = "dnes";
+      col.appendChild(tag);
+    }
+    col.appendChild(dots);
+    col.appendChild(lab);
+    col.addEventListener("click", () => {
+      stav.mesic = (stav.mesic === m) ? null : m;
+      if(stav.mesic !== null) stav.skupina = "vse";
+      syncUI(); render(); casovaOsa();
+      document.getElementById("list").scrollIntoView({block:"start"});
+    });
+    tl.appendChild(col);
+  });
+}
+
+/* ── Filtry a ovládání ────────────────────────────────────────────── */
+function chipy(){
+  const box = document.getElementById("chips");
+  box.innerHTML = "";
+  Object.entries(KATEGORIE).forEach(([klic,k]) => {
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "chip";
+    b.setAttribute("aria-pressed", stav.kategorie.has(klic) ? "true" : "false");
+    b.innerHTML = '<span class="swatch" style="--c:' + k.barva + '"></span>' + k.nazev;
+    b.addEventListener("click", () => {
+      stav.kategorie.has(klic) ? stav.kategorie.delete(klic) : stav.kategorie.add(klic);
+      chipy(); render();
+    });
+    box.appendChild(b);
+  });
+}
+
+function syncUI(){
+  document.querySelectorAll(".seg button").forEach(b =>
+    b.setAttribute("aria-pressed", b.dataset.stav === stav.skupina ? "true" : "false"));
+}
+
+document.querySelectorAll(".seg button").forEach(b => {
+  b.addEventListener("click", () => {
+    stav.skupina = b.dataset.stav; stav.mesic = null;
+    syncUI(); render(); casovaOsa();
+  });
+});
+document.getElementById("q").addEventListener("input", e => {
+  stav.hledani = e.target.value.trim(); render();
+});
+document.getElementById("sort").addEventListener("change", e => {
+  stav.razeni = e.target.value; render();
+});
+document.getElementById("reset").addEventListener("click", () => {
+  stav.hledani = ""; stav.kategorie.clear(); stav.skupina = "aktualni";
+  stav.razeni = "termin"; stav.mesic = null;
+  document.getElementById("q").value = ""; document.getElementById("sort").value = "termin";
+  chipy(); syncUI(); render(); casovaOsa();
+});
+
+/* ── Články školy ─────────────────────────────────────────────────── */
+function clanky(){
+  const box = document.getElementById("wins");
+  box.innerHTML = CLANKY.map(c =>
+    '<a class="win" href="' + esc(c.url) + '" target="_blank" rel="noopener">' +
+      '<time>' + esc(c.datum) + '</time>' +
+      '<strong>' + esc(c.nadpis) + '</strong>' +
+      '<span>' + esc(c.popis) + '</span>' +
+    '</a>').join("");
+}
+
+/* ── Úvodní informace ─────────────────────────────────────────────── */
+function uvod(){
+  const aktivni = SOUTEZE.filter(s => skupina(s) === "aktualni");
+  const nejblizsi = aktivni
+    .filter(s => datum(s.uzaverka))
+    .sort((a,b) => datum(a.uzaverka) - datum(b.uzaverka))[0];
+  let t = aktivni.length + " otevřených soutěží";
+  if(nejblizsi){
+    t += " · nejbližší uzávěrka " + formatDatum(datum(nejblizsi.uzaverka)) +
+         " (" + nejblizsi.nazev + ")";
+  }
+  document.getElementById("mastMeta").textContent = t;
+  document.getElementById("footUpdated").textContent =
+    "Údaje ověřeny k 15. 9. 2026 · seznam průběžně doplňujeme";
+}
+
+chipy(); syncUI(); casovaOsa(); clanky(); uvod(); render();
+</script>
+</body>
+</html>
